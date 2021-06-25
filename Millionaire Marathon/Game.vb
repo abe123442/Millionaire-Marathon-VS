@@ -52,7 +52,7 @@
             question_bank(currentQuestion)(j) = options(j - 1)
         Next
 
-        currentQuestion += 1
+        'currentQuestion += 1
         Return question_bank(currentQuestion)
     End Function
 
@@ -73,6 +73,13 @@
         End If
     End Sub
 
+    Sub FeedButtons(info)
+        BtnOption1.Text = info(1)
+        BtnOption2.Text = info(2)
+        BtnOption3.Text = info(3)
+        BtnOption4.Text = info(4)
+    End Sub
+
 
 
     'Variable Declarations
@@ -85,6 +92,11 @@
         }
 
     Private Sub FrmGame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim infoBank = UpdateQuestions()
+        currentQuestion += 1
+        Call FeedButtons(infoBank)
+
+
         'For i = 1 To 4
         '    Dim playerStr = String.Format("Player {0}", i)
         '    MsgBox(playerStr & "'s Money: " & players(playerStr).Money)

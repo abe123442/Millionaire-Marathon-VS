@@ -24,6 +24,10 @@ Partial Class FrmGame
     Private Sub InitializeComponent()
         Me.lbl_round = New System.Windows.Forms.Label()
         Me.lbl_question = New System.Windows.Forms.Label()
+        Me.BtnOption1 = New System.Windows.Forms.Button()
+        Me.BtnOption2 = New System.Windows.Forms.Button()
+        Me.BtnOption3 = New System.Windows.Forms.Button()
+        Me.BtnOption4 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lbl_round
@@ -46,11 +50,47 @@ Partial Class FrmGame
         Me.lbl_question.TabIndex = 1
         Me.lbl_question.Text = "Question: "
         '
+        'BtnOption1
+        '
+        Me.BtnOption1.Location = New System.Drawing.Point(169, 155)
+        Me.BtnOption1.Name = "BtnOption1"
+        Me.BtnOption1.Size = New System.Drawing.Size(181, 87)
+        Me.BtnOption1.TabIndex = 2
+        Me.BtnOption1.UseVisualStyleBackColor = True
+        '
+        'BtnOption2
+        '
+        Me.BtnOption2.Location = New System.Drawing.Point(451, 155)
+        Me.BtnOption2.Name = "BtnOption2"
+        Me.BtnOption2.Size = New System.Drawing.Size(181, 87)
+        Me.BtnOption2.TabIndex = 2
+        Me.BtnOption2.UseVisualStyleBackColor = True
+        '
+        'BtnOption3
+        '
+        Me.BtnOption3.Location = New System.Drawing.Point(169, 298)
+        Me.BtnOption3.Name = "BtnOption3"
+        Me.BtnOption3.Size = New System.Drawing.Size(181, 87)
+        Me.BtnOption3.TabIndex = 2
+        Me.BtnOption3.UseVisualStyleBackColor = True
+        '
+        'BtnOption4
+        '
+        Me.BtnOption4.Location = New System.Drawing.Point(451, 298)
+        Me.BtnOption4.Name = "BtnOption4"
+        Me.BtnOption4.Size = New System.Drawing.Size(181, 87)
+        Me.BtnOption4.TabIndex = 2
+        Me.BtnOption4.UseVisualStyleBackColor = True
+        '
         'FrmGame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.BtnOption4)
+        Me.Controls.Add(Me.BtnOption3)
+        Me.Controls.Add(Me.BtnOption2)
+        Me.Controls.Add(Me.BtnOption1)
         Me.Controls.Add(Me.lbl_question)
         Me.Controls.Add(Me.lbl_round)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -63,4 +103,8 @@ Partial Class FrmGame
 
     Friend WithEvents lbl_round As Label
     Friend WithEvents lbl_question As Label
+    Friend WithEvents BtnOption1 As Button
+    Friend WithEvents BtnOption2 As Button
+    Friend WithEvents BtnOption3 As Button
+    Friend WithEvents BtnOption4 As Button
 End Class
