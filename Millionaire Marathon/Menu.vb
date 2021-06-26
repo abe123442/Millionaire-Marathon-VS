@@ -7,9 +7,9 @@
         panel.Show()
     End Sub
 
-    Private Sub Play_Click(sender As Object, e As EventArgs) Handles btn_play.Click
+    Private Sub Play_Click(sender As Object, e As EventArgs) Handles btnPlay.Click
         pnl.BringToFront()
-        SwitchPanel(FrmGame)
+        SwitchPanel(FrmSetup)
     End Sub
 
 End Class
