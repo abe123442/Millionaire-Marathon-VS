@@ -1,5 +1,5 @@
 ﻿Public Class FrmSetup
-    Public playerNames
+    Public playerNames As Hashtable
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
         Dim pNames As New Hashtable From {
         {"Player 1", txtPlayer1.Text},
