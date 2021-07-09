@@ -30,6 +30,7 @@ Partial Class FrmGame
         Me.btnOption4 = New System.Windows.Forms.Button()
         Me.lblFeedback = New System.Windows.Forms.Label()
         Me.lblCurrentPlayer = New System.Windows.Forms.Label()
+        Me.lblMoney = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lblRound
@@ -107,6 +108,16 @@ Partial Class FrmGame
         Me.lblCurrentPlayer.TabIndex = 1
         Me.lblCurrentPlayer.Text = "Current Player: "
         '
+        'lblMoney
+        '
+        Me.lblMoney.AutoSize = True
+        Me.lblMoney.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
+        Me.lblMoney.Location = New System.Drawing.Point(570, 62)
+        Me.lblMoney.Name = "lblMoney"
+        Me.lblMoney.Size = New System.Drawing.Size(104, 26)
+        Me.lblMoney.TabIndex = 1
+        Me.lblMoney.Text = "Earnings:"
+        '
         'FrmGame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -117,6 +128,7 @@ Partial Class FrmGame
         Me.Controls.Add(Me.btnOption3)
         Me.Controls.Add(Me.btnOption2)
         Me.Controls.Add(Me.btnOption1)
+        Me.Controls.Add(Me.lblMoney)
         Me.Controls.Add(Me.lblCurrentPlayer)
         Me.Controls.Add(Me.lblQuestion)
         Me.Controls.Add(Me.lblRound)
@@ -136,4 +148,5 @@ Partial Class FrmGame
     Friend WithEvents btnOption4 As Button
     Friend WithEvents lblFeedback As Label
     Friend WithEvents lblCurrentPlayer As Label
+    Friend WithEvents lblMoney As Label
 End Class

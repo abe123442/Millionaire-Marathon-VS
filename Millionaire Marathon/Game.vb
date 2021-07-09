@@ -1,6 +1,6 @@
 ﻿Public Class FrmGame
     ReadOnly filePath As String = "Questions.csv"
-    Dim questionBank As ArrayList = GetQuestions(filePath)
+    ReadOnly questionBank As ArrayList = GetQuestions(filePath)
     Dim currentQuestionInfo As Array
 
     Dim currentRound As Integer = 1
@@ -8,10 +8,10 @@
 
     ReadOnly PlayerNames As Hashtable = FrmSetup.playerNames
     Dim Players As New Hashtable From {
-        {PlayerNames("Player 1"), New Player With {.Money = 0, .Qansd = 0, .Streak = 0}},
-        {PlayerNames("Player 2"), New Player With {.Money = 0, .Qansd = 0, .Streak = 0}},
-        {PlayerNames("Player 3"), New Player With {.Money = 0, .Qansd = 0, .Streak = 0}},
-        {PlayerNames("Player 4"), New Player With {.Money = 0, .Qansd = 0, .Streak = 0}}
+        {PlayerNames("Player 1"), New Player},
+        {PlayerNames("Player 2"), New Player},
+        {PlayerNames("Player 3"), New Player},
+        {PlayerNames("Player 4"), New Player}
     }
     Dim currentPlayerInt = 1
     Dim currentPlayerStr = PlayerNames(String.Format("Player {0}", currentPlayerInt))
@@ -62,11 +62,6 @@
                 Call UpdateQuestions()
                 Call FeedInformation(currentQuestionInfo)
             End If
-
-        Else
-            For i = 1 To 4
-                Players(String.Format("Player {0}", i)).Money = Players(String.Format("Player {0}", i)).Qansd
-            Next
         End If
     End Sub
 
@@ -77,6 +72,7 @@
         End If
         lblRound.Text = "Round: " & currentRound
         lblCurrentPlayer.Text = "Current Player: " & PlayerNames(String.Format("Player {0}", currentPlayerInt))
+        lblMoney.Text = "Money: $" & Players(currentPlayerStr).Money
         lblQuestion.Text = String.Format("Question {0}: {1}", (currentQuestion + 1), info(0))
 
         btnOption1.Text = info(1)
@@ -134,26 +130,21 @@
                 questions.Add(MyReader.ReadFields())
             End While
         End Using
+        Call ShuffleArray(questions)
         Return questions
     End Function
 
     Sub ShuffleArray(arr As ArrayList)
-        Dim last_index As Integer = arr.Count - 1
-        Dim rand_index As Integer
-        Dim rand_gen As Random = New Random
+        Dim lastIndex As Integer = arr.Count - 1
+        Dim randIndex As Integer
+        Dim randGen As Random = New Random
 
-        While last_index > 0
-            rand_index = rand_gen.Next(0, arr.Count)
-            Dim temp = arr(last_index)
-            arr(last_index) = arr(rand_index)
-            arr(rand_index) = temp
-            last_index -= 1
+        While lastIndex > 0
+            randIndex = randGen.Next(0, arr.Count)
+            Dim temp = arr(lastIndex)
+            arr(lastIndex) = arr(randIndex)
+            arr(randIndex) = temp
+            lastIndex -= 1
         End While
     End Sub
-End Class
-
-Public Class Player
-    Property Money As Integer
-    Property Qansd As Integer
-    Property Streak As Integer
 End Class
