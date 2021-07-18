@@ -4,64 +4,56 @@
     Dim currentQuestionInfo As Array
 
     Dim currentRound As Integer = 1
-    Dim currentQuestion As Integer = 0
+    Dim currentQuestion As Integer = 70
 
     ReadOnly PlayerNames As Hashtable = FrmSetup.playerNames
+
     Dim Players As New Hashtable From {
         {PlayerNames("Player 1"), New Player},
         {PlayerNames("Player 2"), New Player},
         {PlayerNames("Player 3"), New Player},
         {PlayerNames("Player 4"), New Player}
     }
+
     Dim currentPlayerInt = 1
-    Dim currentPlayerStr = PlayerNames(String.Format("Player {0}", currentPlayerInt))
+    Dim currentPlayerStr = PlayerNames("Player " + currentPlayerInt)
 
     Private Sub FrmGame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call UpdateQuestions()
         Call FeedInformation(currentQuestionInfo)
     End Sub
 
-    Private Sub BtnOption1_Click(sender As Object, e As EventArgs) Handles btnOption1.Click
-        Call MainGame(btnOption1.Text, currentQuestionInfo(5))
+    Private Sub BtnOptions_Click(sender As Object, e As EventArgs) _
+        Handles btnOption1.Click, btnOption2.Click, btnOption3.Click, btnOption4.Click
+
+        Dim btnOption As Button = sender
+        Call MainGame(btnOption.Text)
     End Sub
 
-    Private Sub BtnOption2_Click(sender As Object, e As EventArgs) Handles btnOption2.Click
-        Call MainGame(btnOption2.Text, currentQuestionInfo(5))
-    End Sub
+    Private Sub MainGame(userInput As String)
+        Dim correctAnswer As String = currentQuestionInfo(5)
 
-    Private Sub BtnOption3_Click(sender As Object, e As EventArgs) Handles btnOption3.Click
-        Call MainGame(btnOption3.Text, currentQuestionInfo(5))
-    End Sub
+        If currentQuestion > 80 Then
+            Return
+        End If
 
-    Private Sub BtnOption4_Click(sender As Object, e As EventArgs) Handles btnOption4.Click
-        Call MainGame(btnOption4.Text, currentQuestionInfo(5))
-    End Sub
-
-    Private Sub MainGame(userInput As String, correctAnswer As String)
-        If currentQuestion + 1 <= 81 Then
-
-            If (userInput = correctAnswer) Then
+        Select Case userInput
+            Case correctAnswer
                 Players(currentPlayerStr).Money = 2 ^ (Players(currentPlayerStr).Qansd)
                 Players(currentPlayerStr).Qansd += 1
-                Players(currentPlayerStr).Streak += 1
+                lblReponse.Text = currentPlayerStr & " is correct!"
+            Case "pass"
+                lblReponse.Text = currentPlayerStr & " passes!"
+            Case Else
+                lblReponse.Text = currentPlayerStr & " is wrong!"
+        End Select
 
-                lblFeedback.Text = String.Format("{0} is correct!", currentPlayerStr)
-                Call CheckPlayerStreak()
-            Else
-                If userInput = "pass" Then
-                    lblFeedback.Text = currentPlayerStr & " passes the question and exits the hotseat!"
-                Else
-                    lblFeedback.Text = currentPlayerStr & " is incorrect and exits the hotseat!"
-                End If
-                Call ChangePlayer()
-                lblFeedback.Text = currentPlayerStr & " enters the hotseat"
-            End If
-
-            currentQuestion += 1
-            If currentQuestion <> 81 Then
-                Call UpdateQuestions()
-                Call FeedInformation(currentQuestionInfo)
-            End If
+        currentQuestion += 1
+        'lblMoney.Text = "Money: $" & Players(currentPlayerStr).Money
+        If currentQuestion <> 81 Then
+            Call ChangePlayer()
+            Call UpdateQuestions()
+            Call FeedInformation(currentQuestionInfo)
         End If
     End Sub
 
@@ -71,7 +63,7 @@
             currentRound += 1
         End If
         lblRound.Text = "Round: " & currentRound
-        lblCurrentPlayer.Text = "Current Player: " & PlayerNames(String.Format("Player {0}", currentPlayerInt))
+        lblCurrentPlayer.Text = "Current Player: " & currentPlayerStr
         lblMoney.Text = "Money: $" & Players(currentPlayerStr).Money
         lblQuestion.Text = String.Format("Question {0}: {1}", (currentQuestion + 1), info(0))
 
@@ -81,27 +73,25 @@
         btnOption4.Text = info(4)
     End Sub
 
+    Function ChangePlayerAndText()
+        Call ChangePlayer()
+        Dim message As String = currentPlayerStr & " enters the hotseat!"
+        Return message
+    End Function
+
     Sub ChangePlayer()
         If currentPlayerInt = 4 Then
             currentPlayerInt = 1
         Else
             currentPlayerInt += 1
         End If
-        currentPlayerStr = PlayerNames(String.Format("Player {0}", currentPlayerInt))
+        currentPlayerStr = PlayerNames("Player " + currentPlayerInt)
     End Sub
 
     Function CheckNewRound() As Boolean
         Return (currentQuestion Mod 20 = 0) And (currentQuestion <> 0)
     End Function
 
-    Sub CheckPlayerStreak()
-        If Players(currentPlayerStr).Streak = 5 Then
-            lblFeedback.Text = currentPlayerStr & " exits the hotseat!"
-            Call ChangePlayer()
-            lblFeedback.Text = currentPlayerStr & " enters the hotseat!"
-            Players(currentPlayerStr).Streak = 0
-        End If
-    End Sub
 
     Sub UpdateQuestions()
         If currentQuestion < 81 Then

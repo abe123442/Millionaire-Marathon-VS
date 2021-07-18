@@ -28,9 +28,10 @@ Partial Class FrmGame
         Me.btnOption2 = New System.Windows.Forms.Button()
         Me.btnOption3 = New System.Windows.Forms.Button()
         Me.btnOption4 = New System.Windows.Forms.Button()
-        Me.lblFeedback = New System.Windows.Forms.Label()
+        Me.lblPlayerAnnouncement = New System.Windows.Forms.Label()
         Me.lblCurrentPlayer = New System.Windows.Forms.Label()
         Me.lblMoney = New System.Windows.Forms.Label()
+        Me.lblReponse = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lblRound
@@ -89,14 +90,14 @@ Partial Class FrmGame
         Me.btnOption4.TabIndex = 2
         Me.btnOption4.UseVisualStyleBackColor = True
         '
-        'lblFeedback
+        'lblPlayerAnnouncement
         '
-        Me.lblFeedback.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFeedback.Location = New System.Drawing.Point(51, 404)
-        Me.lblFeedback.Name = "lblFeedback"
-        Me.lblFeedback.Size = New System.Drawing.Size(698, 24)
-        Me.lblFeedback.TabIndex = 3
-        Me.lblFeedback.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.lblPlayerAnnouncement.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPlayerAnnouncement.Location = New System.Drawing.Point(66, 404)
+        Me.lblPlayerAnnouncement.Name = "lblPlayerAnnouncement"
+        Me.lblPlayerAnnouncement.Size = New System.Drawing.Size(316, 24)
+        Me.lblPlayerAnnouncement.TabIndex = 3
+        Me.lblPlayerAnnouncement.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'lblCurrentPlayer
         '
@@ -118,12 +119,22 @@ Partial Class FrmGame
         Me.lblMoney.TabIndex = 1
         Me.lblMoney.Text = "Earnings:"
         '
+        'lblReponse
+        '
+        Me.lblReponse.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReponse.Location = New System.Drawing.Point(419, 404)
+        Me.lblReponse.Name = "lblReponse"
+        Me.lblReponse.Size = New System.Drawing.Size(316, 24)
+        Me.lblReponse.TabIndex = 4
+        Me.lblReponse.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'FrmGame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.lblFeedback)
+        Me.Controls.Add(Me.lblReponse)
+        Me.Controls.Add(Me.lblPlayerAnnouncement)
         Me.Controls.Add(Me.btnOption4)
         Me.Controls.Add(Me.btnOption3)
         Me.Controls.Add(Me.btnOption2)
@@ -146,7 +157,8 @@ Partial Class FrmGame
     Friend WithEvents btnOption2 As Button
     Friend WithEvents btnOption3 As Button
     Friend WithEvents btnOption4 As Button
-    Friend WithEvents lblFeedback As Label
+    Friend WithEvents lblPlayerAnnouncement As Label
     Friend WithEvents lblCurrentPlayer As Label
     Friend WithEvents lblMoney As Label
+    Friend WithEvents lblReponse As Label
 End Class
