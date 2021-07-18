@@ -1,13 +1,14 @@
 ﻿Public Class FrmGame
-    ReadOnly filePath As String = "Questions.csv"
-    ReadOnly questionBank As ArrayList = GetQuestions(filePath)
-    Dim currentQuestionInfo As Array
+    Dim MRE As New Threading.ManualResetEvent(False)
 
-    Dim currentRound As Integer = 1
-    Dim currentQuestion As Integer = 70
+    ReadOnly FilePath As String = "Questions.csv"
+    ReadOnly Rounds = GetRounds(GetQuestions(FilePath))
+
+    Dim CurrentRound As Integer = 1
+    Dim CurrentQuestionNo As Integer = 0
+    Dim CurrentQuestionInfo As Array
 
     ReadOnly PlayerNames As Hashtable = FrmSetup.playerNames
-
     Dim Players As New Hashtable From {
         {PlayerNames("Player 1"), New Player},
         {PlayerNames("Player 2"), New Player},
@@ -15,69 +16,70 @@
         {PlayerNames("Player 4"), New Player}
     }
 
-    Dim currentPlayerInt = 1
-    Dim currentPlayerStr = PlayerNames("Player " + currentPlayerInt)
+    Dim Response As String
+    Dim currentPlayerInt As Integer = 1
+    'Dim currentPlayerStr As String = PlayerNames("Player " + Str(currentPlayerInt))
+    Dim currentPlayerStr As String = PlayerNames(String.Format("Player {0}", currentPlayerInt))
 
     Private Sub FrmGame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Call UpdateQuestions()
-        Call FeedInformation(currentQuestionInfo)
+        Call MainGame()
     End Sub
 
-    Private Sub BtnOptions_Click(sender As Object, e As EventArgs) _
+    Sub BtnOptions_Click(sender As Button, e As EventArgs) _
         Handles btnOption1.Click, btnOption2.Click, btnOption3.Click, btnOption4.Click
 
-        Dim btnOption As Button = sender
-        Call MainGame(btnOption.Text)
+        Dim BtnOption As Button = sender
+        Response = BtnOption.Text
+        MRE.Set()
     End Sub
 
-    Private Sub MainGame(userInput As String)
-        Dim correctAnswer As String = currentQuestionInfo(5)
+    Async Sub MainGame()
+        For round = 0 To 3
+            CurrentRound = round + 1
+            For question = 0 To Rounds(round).Count - 1
+                CurrentQuestionNo = question
+                CurrentQuestionInfo = Rounds(round)(CurrentQuestionNo)
+                Dim correctAnswer As String = CurrentQuestionInfo(5)
 
-        If currentQuestion > 80 Then
-            Return
-        End If
+                PopulateButtons(CurrentQuestionInfo)
+                PopulateLabels(CurrentQuestionInfo(0))
 
-        Select Case userInput
-            Case correctAnswer
-                Players(currentPlayerStr).Money = 2 ^ (Players(currentPlayerStr).Qansd)
-                Players(currentPlayerStr).Qansd += 1
-                lblReponse.Text = currentPlayerStr & " is correct!"
-            Case "pass"
-                lblReponse.Text = currentPlayerStr & " passes!"
-            Case Else
-                lblReponse.Text = currentPlayerStr & " is wrong!"
-        End Select
+                Await Task.Run(Sub()
+                                   MRE.WaitOne()
+                               End Sub)
 
-        currentQuestion += 1
-        'lblMoney.Text = "Money: $" & Players(currentPlayerStr).Money
-        If currentQuestion <> 81 Then
-            Call ChangePlayer()
-            Call UpdateQuestions()
-            Call FeedInformation(currentQuestionInfo)
-        End If
+                Select Case Response
+                    Case correctAnswer
+                        Players(currentPlayerStr).Money = 2 ^ (Players(currentPlayerStr).Qansd)
+                        Players(currentPlayerStr).Qansd += 1
+                        lblReponse.Text = currentPlayerStr & " is correct!"
+                    Case "pass"
+                        lblReponse.Text = currentPlayerStr & " passes!"
+                    Case Else
+                        lblReponse.Text = currentPlayerStr & " is wrong!"
+                End Select
+
+                Call ChangePlayer()
+                MRE.Reset()
+
+            Next question
+        Next round
     End Sub
 
-
-    Sub FeedInformation(info As Array)
-        If CheckNewRound() Then
-            currentRound += 1
-        End If
-        lblRound.Text = "Round: " & currentRound
-        lblCurrentPlayer.Text = "Current Player: " & currentPlayerStr
-        lblMoney.Text = "Money: $" & Players(currentPlayerStr).Money
-        lblQuestion.Text = String.Format("Question {0}: {1}", (currentQuestion + 1), info(0))
-
+    Sub PopulateButtons(info As Array)
         btnOption1.Text = info(1)
         btnOption2.Text = info(2)
         btnOption3.Text = info(3)
         btnOption4.Text = info(4)
     End Sub
 
-    Function ChangePlayerAndText()
-        Call ChangePlayer()
-        Dim message As String = currentPlayerStr & " enters the hotseat!"
-        Return message
-    End Function
+    Sub PopulateLabels(question As String)
+        lblRound.Text = "Round: " & CurrentRound
+        lblCurrentPlayer.Text = "Current Player: " & currentPlayerStr
+        lblMoney.Text = "Money: $" & Players(currentPlayerStr).Money
+        lblQuestion.Text = String.Format("Question {0}: {1}", (CurrentQuestionNo + 1), question)
+    End Sub
+
 
     Sub ChangePlayer()
         If currentPlayerInt = 4 Then
@@ -85,31 +87,26 @@
         Else
             currentPlayerInt += 1
         End If
-        currentPlayerStr = PlayerNames("Player " + currentPlayerInt)
+        currentPlayerStr = PlayerNames(String.Format("Player {0}", currentPlayerInt))
     End Sub
 
-    Function CheckNewRound() As Boolean
-        Return (currentQuestion Mod 20 = 0) And (currentQuestion <> 0)
+    Function GetRounds(questions As ArrayList) As List(Of ArrayList)
+        Dim rounds As New List(Of ArrayList) From {
+            GetPartialList(questions, 0, 19),
+            GetPartialList(questions, 20, 39),
+            GetPartialList(questions, 40, 59),
+            GetPartialList(questions, 60, questions.Count - 1)
+            }
+        Return rounds
     End Function
 
-
-    Sub UpdateQuestions()
-        If currentQuestion < 81 Then
-            Dim options As ArrayList = New ArrayList()
-            For j = 1 To 4
-                options.Add(questionBank(currentQuestion)(j))
-            Next
-
-            Call ShuffleArray(options)
-            options.Add(questionBank(currentQuestion)(5))
-
-            For j = 1 To 4
-                questionBank(currentQuestion)(j) = options(j - 1)
-            Next
-
-            currentQuestionInfo = questionBank(currentQuestion)
-        End If
-    End Sub
+    Function GetPartialList(arr As ArrayList, startIndex As Integer, lastIndex As Integer)
+        Dim partialArray As New ArrayList
+        For i = startIndex To lastIndex
+            partialArray.Add(arr(i))
+        Next
+        Return partialArray
+    End Function
 
     Function GetQuestions(path As String) As ArrayList
         Dim questions As ArrayList = New ArrayList()
@@ -120,6 +117,22 @@
                 questions.Add(MyReader.ReadFields())
             End While
         End Using
+
+        For Each question In questions
+            Dim options As New ArrayList()
+
+            For j = 1 To 4
+                options.Add(question(j))
+            Next
+
+            Call ShuffleArray(options)
+            options.Add(question(5))
+
+            For j = 1 To 4
+                question(j) = options(j - 1)
+            Next
+        Next
+
         Call ShuffleArray(questions)
         Return questions
     End Function

@@ -145,7 +145,7 @@ Partial Class FrmGame
         Me.Controls.Add(Me.lblRound)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FrmGame"
-        Me.Text = "Game"
+        Me.Text = "v"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
