@@ -1,7 +1,7 @@
 ﻿Public Class FrmGame
     Dim MRE As New Threading.ManualResetEvent(False)
 
-    ReadOnly FilePath As String = "Questions.csv"
+    ReadOnly FilePath As String = "assets\Questions.csv"
     ReadOnly Rounds = GetRounds(GetQuestions(FilePath))
 
     Dim CurrentRound As Integer = 1
@@ -10,43 +10,47 @@
 
     ReadOnly PlayerNames As Hashtable = FrmSetup.playerNames
     Dim Players As New Hashtable From {
-        {PlayerNames("Player 1"), New Player},
-        {PlayerNames("Player 2"), New Player},
-        {PlayerNames("Player 3"), New Player},
-        {PlayerNames("Player 4"), New Player}
+        {PlayerNames("Player 1"), New PlayerClass},
+        {PlayerNames("Player 2"), New PlayerClass},
+        {PlayerNames("Player 3"), New PlayerClass},
+        {PlayerNames("Player 4"), New PlayerClass}
     }
 
     Dim Response As String
     Dim currentPlayerInt As Integer = 1
-    'Dim currentPlayerStr As String = PlayerNames("Player " + Str(currentPlayerInt))
-    Dim currentPlayerStr As String = PlayerNames(String.Format("Player {0}", currentPlayerInt))
+    Dim currentPlayerStr As String = PlayerNames("Player" + Str(currentPlayerInt))
 
     Private Sub FrmGame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SetStyle(ControlStyles.SupportsTransparentBackColor, True)
+        BackColor = Color.FromArgb(0, Color.Black)
         Call MainGame()
+        ' call the end of game stuff later here
     End Sub
 
-    Sub BtnOptions_Click(sender As Button, e As EventArgs) _
-        Handles btnOption1.Click, btnOption2.Click, btnOption3.Click, btnOption4.Click
-
+    Sub BtnOptions_Click(sender As Button, e As EventArgs) Handles btnOption1.Click, btnOption2.Click, btnOption3.Click, btnOption4.Click
         Dim BtnOption As Button = sender
         Response = BtnOption.Text
         MRE.Set()
     End Sub
 
+    ' main game subroutine
     Async Sub MainGame()
         For round = 0 To 3
             CurrentRound = round + 1
             For question = 0 To Rounds(round).Count - 1
+
                 CurrentQuestionNo = question
                 CurrentQuestionInfo = Rounds(round)(CurrentQuestionNo)
+                Call RandomiseOptions(CurrentQuestionInfo)
                 Dim correctAnswer As String = CurrentQuestionInfo(5)
 
                 PopulateButtons(CurrentQuestionInfo)
                 PopulateLabels(CurrentQuestionInfo(0))
 
-                Await Task.Run(Sub()
-                                   MRE.WaitOne()
-                               End Sub)
+                Await Task.Run(
+                    Sub()
+                        MRE.WaitOne()
+                    End Sub)
 
                 Select Case Response
                     Case correctAnswer
@@ -66,6 +70,8 @@
         Next round
     End Sub
 
+    ' subroutines that update the visuals of the game
+
     Sub PopulateButtons(info As Array)
         btnOption1.Text = info(1)
         btnOption2.Text = info(2)
@@ -80,24 +86,25 @@
         lblQuestion.Text = String.Format("Question {0}: {1}", (CurrentQuestionNo + 1), question)
     End Sub
 
-
     Sub ChangePlayer()
         If currentPlayerInt = 4 Then
             currentPlayerInt = 1
         Else
             currentPlayerInt += 1
         End If
-        currentPlayerStr = PlayerNames(String.Format("Player {0}", currentPlayerInt))
+        currentPlayerStr = PlayerNames("Player" + Str(currentPlayerInt))
     End Sub
 
+
+    ' functions and subroutines that gets or modifies game data 
+
     Function GetRounds(questions As ArrayList) As List(Of ArrayList)
-        Dim rounds As New List(Of ArrayList) From {
+        Return New List(Of ArrayList) From {
             GetPartialList(questions, 0, 19),
             GetPartialList(questions, 20, 39),
             GetPartialList(questions, 40, 59),
             GetPartialList(questions, 60, questions.Count - 1)
             }
-        Return rounds
     End Function
 
     Function GetPartialList(arr As ArrayList, startIndex As Integer, lastIndex As Integer)
@@ -108,8 +115,20 @@
         Return partialArray
     End Function
 
+    Sub RandomiseOptions(question As Array)
+        Dim options As New ArrayList()
+        For j = 1 To 4
+            options.Add(question(j))
+        Next
+        Call ShuffleArray(options)
+        options.Add(question(5))
+        For j = 1 To 4
+            question(j) = options(j - 1)
+        Next
+    End Sub
+
     Function GetQuestions(path As String) As ArrayList
-        Dim questions As ArrayList = New ArrayList()
+        Dim questions As New ArrayList()
         Using MyReader As New FileIO.TextFieldParser(path)
             MyReader.TextFieldType = FileIO.FieldType.Delimited
             MyReader.SetDelimiters(",")
@@ -117,22 +136,6 @@
                 questions.Add(MyReader.ReadFields())
             End While
         End Using
-
-        For Each question In questions
-            Dim options As New ArrayList()
-
-            For j = 1 To 4
-                options.Add(question(j))
-            Next
-
-            Call ShuffleArray(options)
-            options.Add(question(5))
-
-            For j = 1 To 4
-                question(j) = options(j - 1)
-            Next
-        Next
-
         Call ShuffleArray(questions)
         Return questions
     End Function
