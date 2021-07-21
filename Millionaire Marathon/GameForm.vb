@@ -27,9 +27,9 @@
         ' call the end of game stuff later here
     End Sub
 
-    Sub BtnOptions_Click(sender As Button, e As EventArgs) Handles btnOption1.Click, btnOption2.Click, btnOption3.Click, btnOption4.Click
-        Dim BtnOption As Button = sender
-        Response = BtnOption.Text
+    Sub BtnOptions_Click(sender As Button, e As EventArgs) _
+        Handles btnOption1.Click, btnOption2.Click, btnOption3.Click, btnOption4.Click, btnPass.Click
+        Response = sender.Text
         MRE.Set()
     End Sub
 
@@ -47,6 +47,14 @@
                 PopulateButtons(CurrentQuestionInfo)
                 PopulateLabels(CurrentQuestionInfo(0))
 
+                If (Players(currentPlayerStr).Passes = 0) Then
+                    btnPass.Text = currentPlayerStr & " has no more passes!"
+                    btnPass.Enabled = False
+                Else
+                    btnPass.Text = "Pass"
+                    btnPass.Enabled = True
+                End If
+
                 Await Task.Run(
                     Sub()
                         MRE.WaitOne()
@@ -57,8 +65,11 @@
                         Players(currentPlayerStr).Money = 2 ^ (Players(currentPlayerStr).Qansd)
                         Players(currentPlayerStr).Qansd += 1
                         lblReponse.Text = currentPlayerStr & " is correct!"
-                    Case "pass"
-                        lblReponse.Text = currentPlayerStr & " passes!"
+                    Case "pass", "Pass"
+                        Players(currentPlayerStr).Passes -= 1
+                        lblReponse.Text = currentPlayerStr & " passes with" &
+                                String.Format(" {0}/5 passes left.", Players(currentPlayerStr).Passes)
+                        question -= 1
                     Case Else
                         lblReponse.Text = currentPlayerStr & " is wrong!"
                 End Select

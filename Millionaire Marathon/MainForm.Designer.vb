@@ -30,7 +30,7 @@ Partial Class MainForm
         '
         Me.PanelMain.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PanelMain.AutoSize = True
-        Me.PanelMain.BackColor = System.Drawing.SystemColors.Menu
+        Me.PanelMain.BackColor = System.Drawing.Color.Transparent
         Me.PanelMain.Location = New System.Drawing.Point(3, 3)
         Me.PanelMain.Name = "PanelMain"
         Me.PanelMain.Size = New System.Drawing.Size(775, 500)

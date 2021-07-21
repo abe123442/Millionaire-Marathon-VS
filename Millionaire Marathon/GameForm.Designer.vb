@@ -178,9 +178,9 @@ Partial Class FrmGame
         Me.btnPass.BackColor = System.Drawing.Color.Transparent
         Me.btnPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPass.ForeColor = System.Drawing.Color.Black
-        Me.btnPass.Location = New System.Drawing.Point(305, 420)
+        Me.btnPass.Location = New System.Drawing.Point(244, 420)
         Me.btnPass.Name = "btnPass"
-        Me.btnPass.Size = New System.Drawing.Size(165, 36)
+        Me.btnPass.Size = New System.Drawing.Size(286, 36)
         Me.btnPass.TabIndex = 5
         Me.btnPass.Text = "Pass"
         Me.btnPass.UseVisualStyleBackColor = False
