@@ -9,6 +9,7 @@
         }
         playerNames = pNames
         SwitchPanel(FrmGame)
+        ' my first github commit
     End Sub
 
     Private Sub FrmSetup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
