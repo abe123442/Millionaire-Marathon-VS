@@ -1,10 +1,10 @@
 ﻿Public Class FrmMenu
     Private Sub BtnPlay_Click(sender As Object, e As EventArgs) Handles btnPlay.Click
-        Call SwitchPanel(FrmSetup)
+        SwitchPanel(FrmSetup)
     End Sub
 
     Private Sub BtnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
-        Call SwitchPanel(FrmHelp)
+        SwitchPanel(FrmHelp)
     End Sub
 
     Private Sub FrmMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load

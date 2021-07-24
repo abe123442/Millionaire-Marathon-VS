@@ -9,7 +9,7 @@
     Dim CurrentQuestionInfo As Array
 
     ReadOnly PlayerNames As Hashtable = FrmSetup.playerNames
-    Dim Players As New Hashtable From {
+    Public Players As New Hashtable From {
         {PlayerNames("Player 1"), New PlayerClass},
         {PlayerNames("Player 2"), New PlayerClass},
         {PlayerNames("Player 3"), New PlayerClass},
@@ -24,7 +24,6 @@
         SetStyle(ControlStyles.SupportsTransparentBackColor, True)
         BackColor = Color.FromArgb(0, Color.Black)
         Call MainGame()
-        ' call the end of game stuff later here
     End Sub
 
     Sub BtnOptions_Click(sender As Button, e As EventArgs) _
@@ -44,10 +43,11 @@
                 Call RandomiseOptions(CurrentQuestionInfo)
                 Dim correctAnswer As String = CurrentQuestionInfo(5)
 
-                PopulateButtons(CurrentQuestionInfo)
-                PopulateLabels(CurrentQuestionInfo(0))
+                Call PopulateButtons(CurrentQuestionInfo)
+                Call PopulateLabels(CurrentQuestionInfo(0))
 
                 If (Players(currentPlayerStr).Passes = 0) Then
+                    lblReponse.Text = ""
                     btnPass.Text = currentPlayerStr & " has no more passes!"
                     btnPass.Enabled = False
                 Else
@@ -79,6 +79,7 @@
 
             Next question
         Next round
+        SwitchPanel(FrmStandings)
     End Sub
 
     ' subroutines that update the visuals of the game

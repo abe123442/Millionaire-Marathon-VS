@@ -1,9 +1,9 @@
 ﻿Module CommonModule
-    Sub SwitchPanel(panel As Form)
+    Sub SwitchPanel(frm As Form)
         MainForm.PanelMain.Controls.Clear()
-        panel.TopLevel = False
-        MainForm.PanelMain.Controls.Add(panel)
-        panel.Show()
+        frm.TopLevel = False
+        MainForm.PanelMain.Controls.Add(frm)
+        frm.Show()
         MainForm.PanelMain.BringToFront()
     End Sub
 End Module
