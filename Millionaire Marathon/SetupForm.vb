@@ -1,5 +1,6 @@
 ﻿Public Class FrmSetup
     Public playerNames As Hashtable
+
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
         Dim pNames As New Hashtable From {
         {"Player 1", txtPlayer1.Text},
@@ -9,7 +10,6 @@
         }
         playerNames = pNames
         SwitchPanel(FrmGame)
-        ' my first github commit
     End Sub
 
     Private Sub FrmSetup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
