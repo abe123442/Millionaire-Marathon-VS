@@ -27,9 +27,7 @@
         Next
     End Sub
 
-    Sub PopulateLabels(
-                      lbls As List(Of Label),
-                      vars As GameVariables)
+    Sub PopulateLabels(lbls As List(Of Label), vars As GameVariables)
         For Each lbl As Label In lbls
             Select Case lbl.Name
                 Case "lblRound"
@@ -44,7 +42,16 @@
         Next
     End Sub
 
-    Function GetPartialList(arr As ArrayList, startIndex As Integer, lastIndex As Integer)
+    Function GetControlByName(ctrls As IEnumerable(Of Control), name As String)
+        For Each ctrl As Control In ctrls
+            If ctrl.Name = name Then
+                Return ctrl
+            End If
+        Next
+        Return False
+    End Function
+
+    Function GetPartialList(arr As ArrayList, startIndex As Integer, lastIndex As Integer) As ArrayList
         Dim partialArray As New ArrayList
         For i = startIndex To lastIndex
             partialArray.Add(arr(i))
@@ -54,11 +61,10 @@
 
     Function GetRounds(questions As ArrayList) As List(Of ArrayList)
         Return New List(Of ArrayList) From {
-            GetPartialList(questions, 0, 19),
-            GetPartialList(questions, 20, 39),
-            GetPartialList(questions, 40, 59),
-            GetPartialList(questions, 60, questions.Count - 1)
-            }
+            GetPartialList(arr:=questions, startIndex:=0, lastIndex:=19),
+            GetPartialList(arr:=questions, startIndex:=20, lastIndex:=39),
+            GetPartialList(arr:=questions, startIndex:=40, lastIndex:=59),
+            GetPartialList(arr:=questions, startIndex:=60, lastIndex:=questions.Count - 1)}
     End Function
 
     Function RandomiseOptions(question As Array) As Array
@@ -66,7 +72,7 @@
         For j = 1 To 4
             options.Add(question(j))
         Next
-        Call ShuffleArray(options)
+        Call ShuffleArray(arr:=options)
         options.Add(question(5))
         For j = 1 To 4
             question(j) = options(j - 1)
@@ -83,7 +89,7 @@
                 questions.Add(MyReader.ReadFields())
             End While
         End Using
-        Call ShuffleArray(questions)
+        Call ShuffleArray(arr:=questions)
         Return questions
     End Function
 

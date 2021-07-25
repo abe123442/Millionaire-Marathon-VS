@@ -19,9 +19,12 @@
         Me.Labels = labels
     End Sub
 
-    Async Sub MainGame(lblReponse As Label, btnPass As Button, nextForm As Form)
-        Dim Vars As New GameVariables
-        Vars.CurrentPlayerInfo = New GameVariables.CurrentPlayerInfoClass
+    Async Sub MainGame(nextForm As Form)
+        Dim lblReponse As Label = GetControlByName(ctrls:=Me.Labels, name:="lblReponse")
+        Dim btnPass As Button = GetControlByName(ctrls:=Me.Buttons, name:="btnPass")
+        Dim Vars As New GameVariables With {
+            .CurrentPlayerInfo = New GameVariables.CurrentPlayerInfoClass
+        }
         Dim PlayerID As String
 
 
