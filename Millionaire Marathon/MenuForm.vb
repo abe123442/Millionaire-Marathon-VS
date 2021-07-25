@@ -8,6 +8,7 @@
     End Sub
 
     Private Sub FrmMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FrmStandings = Nothing
         SetStyle(ControlStyles.SupportsTransparentBackColor, True)
         BackColor = Color.FromArgb(0, Color.Black)
     End Sub

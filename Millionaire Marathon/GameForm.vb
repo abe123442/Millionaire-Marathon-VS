@@ -17,8 +17,7 @@
             buttons:=ButtonList,
             labels:=LabelList)
 
-        Game.MainGame(lblReponse:=lblReponse, btnPass:=btnPass)
-
+        Game.MainGame(lblReponse:=lblReponse, btnPass:=btnPass, nextForm:=FrmStandings)
     End Sub
 
     Sub BtnOptions_Click(sender As Button, e As EventArgs) _

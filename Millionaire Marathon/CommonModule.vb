@@ -1,4 +1,5 @@
 ﻿Module CommonModule
+    Public GameOver As Boolean = False
     Public Players As Hashtable
     Public Response As String
 

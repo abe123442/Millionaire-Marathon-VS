@@ -19,27 +19,27 @@
         Me.Labels = labels
     End Sub
 
-    Async Sub MainGame(lblReponse As Label, btnPass As Button)
-        Dim vars As New GameVariables
-        vars.CurrentPlayerInfo = New GameVariables.CurrentPlayerInfoClass
+    Async Sub MainGame(lblReponse As Label, btnPass As Button, nextForm As Form)
+        Dim Vars As New GameVariables
+        Vars.CurrentPlayerInfo = New GameVariables.CurrentPlayerInfoClass
         Dim PlayerID As String
 
 
         For Each Round In Rounds
-            vars.CurrentRound = Rounds.IndexOf(Round) + 1
+            Vars.CurrentRound = Rounds.IndexOf(Round) + 1
 
             For Question = 0 To Round.Count - 1
-                vars.CurrentQuestionInfo = New GameVariables.CurrentQuestionInfoClass With {
+                Vars.CurrentQuestionInfo = New GameVariables.CurrentQuestionInfoClass With {
                     .CurrentQuestionNo = Question,
                     .CurrentQuestion = Round(Question)(0),
                     .OptionsAnswersArray = RandomiseOptions(Round(.CurrentQuestionNo)),
                     .CorrectAnswer = .OptionsAnswersArray(5)
                     }
 
-                PlayerID = vars.CurrentPlayerInfo.CurrentPlayerID
+                PlayerID = Vars.CurrentPlayerInfo.CurrentPlayerID
 
-                PopulateButtons(btns:=Me.Buttons, info:=vars.CurrentQuestionInfo.OptionsAnswersArray)
-                PopulateLabels(lbls:=Me.Labels, vars:=vars)
+                PopulateButtons(btns:=Me.Buttons, info:=Vars.CurrentQuestionInfo.OptionsAnswersArray)
+                PopulateLabels(lbls:=Me.Labels, vars:=Vars)
 
                 If (Players(PlayerID).Passes = 0) Then
                     lblReponse.Text = ""
@@ -56,7 +56,7 @@
                     End Sub)
 
                 Select Case Response
-                    Case vars.CurrentQuestionInfo.CorrectAnswer
+                    Case Vars.CurrentQuestionInfo.CorrectAnswer
                         Players(PlayerID).Money = 2 ^ (Players(PlayerID).Qansd)
                         Players(PlayerID).Qansd += 1
                         Labels.Contains(lblReponse)
@@ -69,11 +69,11 @@
                         lblReponse.Text = $"{Players(PlayerID).Name} is wrong!"
                 End Select
 
-                vars.CurrentPlayerInfo.ChangeCurrentPlayer()
+                Vars.CurrentPlayerInfo.ChangeCurrentPlayer()
                 MRE.Reset()
-
             Next
         Next
+        SwitchPanel(nextForm)
     End Sub
 
 
