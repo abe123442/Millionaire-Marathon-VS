@@ -79,12 +79,14 @@
     <Compile Include="Ending.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GameClass.vb" />
     <Compile Include="GameForm.Designer.vb">
       <DependentUpon>GameForm.vb</DependentUpon>
     </Compile>
     <Compile Include="GameForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GameVariables.vb" />
     <Compile Include="HelpForm.Designer.vb">
       <DependentUpon>HelpForm.vb</DependentUpon>
     </Compile>
