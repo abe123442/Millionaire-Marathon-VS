@@ -26,6 +26,7 @@ Partial Class FrmMenu
         Me.btnHelp = New System.Windows.Forms.Button()
         Me.btnPlay = New System.Windows.Forms.Button()
         Me.lblHeading = New System.Windows.Forms.Label()
+        Me.btnExit = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnHelp
@@ -33,9 +34,9 @@ Partial Class FrmMenu
         Me.btnHelp.BackColor = System.Drawing.Color.Transparent
         Me.btnHelp.FlatAppearance.BorderSize = 0
         Me.btnHelp.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnHelp.Location = New System.Drawing.Point(286, 343)
+        Me.btnHelp.Location = New System.Drawing.Point(286, 283)
         Me.btnHelp.Name = "btnHelp"
-        Me.btnHelp.Size = New System.Drawing.Size(202, 85)
+        Me.btnHelp.Size = New System.Drawing.Size(202, 75)
         Me.btnHelp.TabIndex = 7
         Me.btnHelp.Text = "Help"
         Me.btnHelp.UseVisualStyleBackColor = False
@@ -45,9 +46,9 @@ Partial Class FrmMenu
         Me.btnPlay.BackColor = System.Drawing.Color.Transparent
         Me.btnPlay.FlatAppearance.BorderSize = 0
         Me.btnPlay.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPlay.Location = New System.Drawing.Point(286, 218)
+        Me.btnPlay.Location = New System.Drawing.Point(286, 173)
         Me.btnPlay.Name = "btnPlay"
-        Me.btnPlay.Size = New System.Drawing.Size(202, 85)
+        Me.btnPlay.Size = New System.Drawing.Size(202, 75)
         Me.btnPlay.TabIndex = 6
         Me.btnPlay.Text = "Play"
         Me.btnPlay.UseVisualStyleBackColor = False
@@ -64,6 +65,18 @@ Partial Class FrmMenu
         Me.lblHeading.TabIndex = 5
         Me.lblHeading.Text = "Millionaire Marathon"
         '
+        'btnExit
+        '
+        Me.btnExit.BackColor = System.Drawing.Color.Transparent
+        Me.btnExit.FlatAppearance.BorderSize = 0
+        Me.btnExit.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExit.Location = New System.Drawing.Point(286, 393)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(202, 75)
+        Me.btnExit.TabIndex = 8
+        Me.btnExit.Text = "Exit"
+        Me.btnExit.UseVisualStyleBackColor = False
+        '
         'FrmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -71,6 +84,7 @@ Partial Class FrmMenu
         Me.BackColor = System.Drawing.SystemColors.Menu
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(775, 500)
+        Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnHelp)
         Me.Controls.Add(Me.btnPlay)
         Me.Controls.Add(Me.lblHeading)
@@ -86,4 +100,5 @@ Partial Class FrmMenu
     Friend WithEvents btnHelp As Button
     Friend WithEvents btnPlay As Button
     Friend WithEvents lblHeading As Label
+    Friend WithEvents btnExit As Button
 End Class

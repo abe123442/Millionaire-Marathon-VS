@@ -22,7 +22,20 @@ Partial Class FrmHelp
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.btnHome = New System.Windows.Forms.Button()
         Me.SuspendLayout()
+        '
+        'btnHome
+        '
+        Me.btnHome.BackColor = System.Drawing.Color.Transparent
+        Me.btnHome.FlatAppearance.BorderSize = 0
+        Me.btnHome.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHome.Location = New System.Drawing.Point(284, 422)
+        Me.btnHome.Name = "btnHome"
+        Me.btnHome.Size = New System.Drawing.Size(202, 51)
+        Me.btnHome.TabIndex = 8
+        Me.btnHome.Text = "Home"
+        Me.btnHome.UseVisualStyleBackColor = False
         '
         'FrmHelp
         '
@@ -30,10 +43,13 @@ Partial Class FrmHelp
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(770, 500)
+        Me.Controls.Add(Me.btnHome)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FrmHelp"
         Me.Text = "Help"
         Me.ResumeLayout(False)
 
     End Sub
+
+    Friend WithEvents btnHome As Button
 End Class

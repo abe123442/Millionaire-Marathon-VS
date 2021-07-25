@@ -52,6 +52,7 @@ Partial Class FrmStandings
         Me.LblRankFirst.Size = New System.Drawing.Size(66, 24)
         Me.LblRankFirst.TabIndex = 1
         Me.LblRankFirst.Text = "Label1"
+        Me.LblRankFirst.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblRankSecond
         '
@@ -63,6 +64,7 @@ Partial Class FrmStandings
         Me.LblRankSecond.Size = New System.Drawing.Size(66, 24)
         Me.LblRankSecond.TabIndex = 2
         Me.LblRankSecond.Text = "Label2"
+        Me.LblRankSecond.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblRankFourth
         '
@@ -74,6 +76,7 @@ Partial Class FrmStandings
         Me.LblRankFourth.Size = New System.Drawing.Size(66, 24)
         Me.LblRankFourth.TabIndex = 4
         Me.LblRankFourth.Text = "Label4"
+        Me.LblRankFourth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblRankThird
         '
@@ -85,6 +88,7 @@ Partial Class FrmStandings
         Me.LblRankThird.Size = New System.Drawing.Size(66, 24)
         Me.LblRankThird.TabIndex = 3
         Me.LblRankThird.Text = "Label3"
+        Me.LblRankThird.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnHome
         '
