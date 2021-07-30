@@ -11,12 +11,14 @@
         Dim LabelList As New List(Of Label) From {lblCurrentPlayer, lblMoney, lblQuestion, lblReponse, lblRound}
 
         Dim Game As New GameClass(
-            mre:=MRE,
+            buttonclick:=MRE,
+            millionevent:=MillionEvent,
             players:=Players,
             rounds:=Rounds,
             buttons:=ButtonList,
             labels:=LabelList)
 
+        CustomiseButtons(ButtonList)
         Game.MainGame(nextForm:=FrmStandings)
     End Sub
 

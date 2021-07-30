@@ -1,18 +1,21 @@
 ﻿Class GameClass
     Property Buttons As List(Of Button)
     Property Labels As List(Of Label)
-    Property MRE As Threading.ManualResetEvent
+    Property ButtonClick As Threading.ManualResetEvent
+    Property MillionEvent As Threading.ManualResetEvent
     Property Players As Hashtable
     Property Rounds As List(Of ArrayList)
 
     ' Class Constructor
     Sub New(
-           mre As Threading.ManualResetEvent,
+           buttonclick As Threading.ManualResetEvent,
+           millionevent As Threading.ManualResetEvent,
            players As Hashtable,
            rounds As List(Of ArrayList),
            buttons As List(Of Button),
            labels As List(Of Label))
-        Me.MRE = mre
+        Me.ButtonClick = buttonclick
+        Me.MillionEvent = millionevent
         Me.Players = players
         Me.Rounds = rounds
         Me.Buttons = buttons
@@ -43,20 +46,40 @@
 
                 PopulateButtons(btns:=Me.Buttons, info:=Vars.CurrentQuestionInfo.OptionsAnswersArray)
                 PopulateLabels(lbls:=Me.Labels, vars:=Vars)
+                If Players(PlayerID).Money = 2 ^ 19 Then
+                    SwitchPanel(frm:=FrmMillion)
+                    FrmMillion.lblChallenge.Text = $"{Players(PlayerID).Name}, do you want to risk losing all your earnings to have a chance at winning $1048576 ?"
+                    Await Task.Run(
+                        Sub()
+                            MillionEvent.WaitOne()
+                        End Sub)
+
+                    If AcceptMillion = False Then
+                        Vars.CurrentPlayerInfo.ChangeCurrentPlayer()
+                    End If
+                    MillionEvent.Reset()
+                    SwitchPanel(frm:=FrmGame)
+                End If
+
 
                 If (Players(PlayerID).Passes = 0) Then
                     lblReponse.Text = ""
                     btnPass.Text = $"{Players(PlayerID).Name} has no more passes!"
                     btnPass.Enabled = False
                 Else
-                    btnPass.Text = "Pass"
-                    btnPass.Enabled = True
+                    If AcceptMillion Then
+                        btnPass.Text = $"{Players(PlayerID).Name} cannot pass!"
+                        btnPass.Enabled = False
+                    Else
+                        btnPass.Text = "Pass"
+                        btnPass.Enabled = True
+                    End If
                 End If
 
                 Await Task.Run(
-                    Sub()
-                        MRE.WaitOne()
-                    End Sub)
+                Sub()
+                    ButtonClick.WaitOne()
+                End Sub)
 
                 Select Case Response
                     Case Vars.CurrentQuestionInfo.CorrectAnswer
@@ -69,15 +92,24 @@
                         lblReponse.Text = $"{Players(PlayerID).Name} passes with {Players(PlayerID).Passes}/5 passes left."
                         Question -= 1
                     Case Else
+
                         lblReponse.Text = $"{Players(PlayerID).Name} is wrong!"
+                        If AcceptMillion Then
+                            Players(PlayerID).Money = 0
+                            AcceptMillion = False
+                            SwitchPanel(nextForm)
+                        End If
                 End Select
 
                 Vars.CurrentPlayerInfo.ChangeCurrentPlayer()
-                MRE.Reset()
+                ButtonClick.Reset()
             Next
         Next
         SwitchPanel(nextForm)
     End Sub
 
+    Public Function CheckMillionDollar(name As String)
+        Return $"{name} will you risk all your previous savings at a chance to win $1048576 ?"
+    End Function
 
 End Class

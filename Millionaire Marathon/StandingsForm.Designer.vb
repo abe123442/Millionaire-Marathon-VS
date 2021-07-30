@@ -28,6 +28,7 @@ Partial Class FrmStandings
         Me.LblRankFourth = New System.Windows.Forms.Label()
         Me.LblRankThird = New System.Windows.Forms.Label()
         Me.btnHome = New System.Windows.Forms.Button()
+        Me.lblWinner = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'LblStandings
@@ -95,18 +96,31 @@ Partial Class FrmStandings
         Me.btnHome.BackColor = System.Drawing.Color.Transparent
         Me.btnHome.FlatAppearance.BorderSize = 0
         Me.btnHome.Font = New System.Drawing.Font("Montserrat SemiBold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnHome.Location = New System.Drawing.Point(278, 387)
+        Me.btnHome.Location = New System.Drawing.Point(286, 387)
         Me.btnHome.Name = "btnHome"
         Me.btnHome.Size = New System.Drawing.Size(202, 51)
         Me.btnHome.TabIndex = 7
         Me.btnHome.Text = "Home"
         Me.btnHome.UseVisualStyleBackColor = False
         '
+        'lblWinner
+        '
+        Me.lblWinner.AutoSize = True
+        Me.lblWinner.Font = New System.Drawing.Font("Montserrat", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWinner.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblWinner.Location = New System.Drawing.Point(260, 112)
+        Me.lblWinner.Name = "lblWinner"
+        Me.lblWinner.Size = New System.Drawing.Size(176, 29)
+        Me.lblWinner.TabIndex = 8
+        Me.lblWinner.Text = "Final Standings"
+        Me.lblWinner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'FrmStandings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(759, 461)
+        Me.ClientSize = New System.Drawing.Size(775, 500)
+        Me.Controls.Add(Me.lblWinner)
         Me.Controls.Add(Me.btnHome)
         Me.Controls.Add(Me.LblRankFourth)
         Me.Controls.Add(Me.LblRankThird)
@@ -128,4 +142,5 @@ Partial Class FrmStandings
     Friend WithEvents LblRankFourth As Label
     Friend WithEvents LblRankThird As Label
     Friend WithEvents btnHome As Button
+    Friend WithEvents lblWinner As Label
 End Class

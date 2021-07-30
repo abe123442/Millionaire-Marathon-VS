@@ -3,7 +3,9 @@
         SetStyle(ControlStyles.SupportsTransparentBackColor, True)
         BackColor = Color.FromArgb(0, Color.Black)
 
+
         Dim sortedPlayers = GetStandings()
+        lblWinner.Text = $"{sortedPlayers(0).Value.Name} wins!"
         LblRankFirst.Text = $"{sortedPlayers(0).Value.Name} has won ${sortedPlayers(0).Value.Money}"
         LblRankSecond.Text = $"{sortedPlayers(1).Value.Name} has won ${sortedPlayers(1).Value.Money}"
         LblRankThird.Text = $"{sortedPlayers(2).Value.Name} has won ${sortedPlayers(2).Value.Money}"
