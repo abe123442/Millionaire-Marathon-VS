@@ -72,13 +72,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommonModule.vb" />
-    <Compile Include="Ending.Designer.vb">
-      <DependentUpon>Ending.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Ending.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="GameDataModule.vb" />
     <Compile Include="GameClass.vb" />
     <Compile Include="GameForm.Designer.vb">
       <DependentUpon>GameForm.vb</DependentUpon>
@@ -86,7 +80,9 @@
     <Compile Include="GameForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameVariables.vb" />
+    <Compile Include="GameVariablesClass.vb" />
+    <Compile Include="GlobalVariablesModule.vb" />
+    <Compile Include="GraphicsModule.vb" />
     <Compile Include="HelpForm.Designer.vb">
       <DependentUpon>HelpForm.vb</DependentUpon>
     </Compile>
@@ -142,9 +138,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Ending.resx">
-      <DependentUpon>Ending.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GameForm.resx">
       <DependentUpon>GameForm.vb</DependentUpon>
     </EmbeddedResource>

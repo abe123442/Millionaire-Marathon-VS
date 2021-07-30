@@ -1,11 +1,11 @@
-﻿Public Class GameVariables
+﻿Public Class GameVariablesClass
     Property CurrentRound As Integer
     Property CurrentPlayerInfo As CurrentPlayerInfoClass
     Property CurrentQuestionInfo As CurrentQuestionInfoClass
 
     Public Class CurrentPlayerInfoClass
-        Public CurrentPlayerNo As Integer = 1
-        Public CurrentPlayerID As String = "Player 1"
+        Public Property CurrentPlayerNo As Integer = 1
+        Public Property CurrentPlayerID As String = "Player 1"
 
         Public Sub ChangeCurrentPlayer()
             If CurrentPlayerNo = 4 Then

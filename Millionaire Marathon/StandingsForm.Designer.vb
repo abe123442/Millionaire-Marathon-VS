@@ -45,48 +45,48 @@ Partial Class FrmStandings
         '
         'LblRankFirst
         '
-        Me.LblRankFirst.AutoSize = True
+        Me.LblRankFirst.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LblRankFirst.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblRankFirst.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.LblRankFirst.Location = New System.Drawing.Point(346, 188)
+        Me.LblRankFirst.Location = New System.Drawing.Point(37, 188)
         Me.LblRankFirst.Name = "LblRankFirst"
-        Me.LblRankFirst.Size = New System.Drawing.Size(66, 24)
+        Me.LblRankFirst.Size = New System.Drawing.Size(700, 24)
         Me.LblRankFirst.TabIndex = 1
         Me.LblRankFirst.Text = "Label1"
         Me.LblRankFirst.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblRankSecond
         '
-        Me.LblRankSecond.AutoSize = True
+        Me.LblRankSecond.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LblRankSecond.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblRankSecond.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.LblRankSecond.Location = New System.Drawing.Point(346, 234)
+        Me.LblRankSecond.Location = New System.Drawing.Point(37, 234)
         Me.LblRankSecond.Name = "LblRankSecond"
-        Me.LblRankSecond.Size = New System.Drawing.Size(66, 24)
+        Me.LblRankSecond.Size = New System.Drawing.Size(700, 24)
         Me.LblRankSecond.TabIndex = 2
         Me.LblRankSecond.Text = "Label2"
         Me.LblRankSecond.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblRankFourth
         '
-        Me.LblRankFourth.AutoSize = True
+        Me.LblRankFourth.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LblRankFourth.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblRankFourth.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.LblRankFourth.Location = New System.Drawing.Point(346, 326)
+        Me.LblRankFourth.Location = New System.Drawing.Point(37, 326)
         Me.LblRankFourth.Name = "LblRankFourth"
-        Me.LblRankFourth.Size = New System.Drawing.Size(66, 24)
+        Me.LblRankFourth.Size = New System.Drawing.Size(700, 24)
         Me.LblRankFourth.TabIndex = 4
         Me.LblRankFourth.Text = "Label4"
         Me.LblRankFourth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblRankThird
         '
-        Me.LblRankThird.AutoSize = True
+        Me.LblRankThird.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LblRankThird.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblRankThird.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.LblRankThird.Location = New System.Drawing.Point(346, 280)
+        Me.LblRankThird.Location = New System.Drawing.Point(37, 280)
         Me.LblRankThird.Name = "LblRankThird"
-        Me.LblRankThird.Size = New System.Drawing.Size(66, 24)
+        Me.LblRankThird.Size = New System.Drawing.Size(700, 24)
         Me.LblRankThird.TabIndex = 3
         Me.LblRankThird.Text = "Label3"
         Me.LblRankThird.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -105,12 +105,11 @@ Partial Class FrmStandings
         '
         'lblWinner
         '
-        Me.lblWinner.AutoSize = True
         Me.lblWinner.Font = New System.Drawing.Font("Montserrat", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWinner.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblWinner.Location = New System.Drawing.Point(260, 112)
+        Me.lblWinner.Location = New System.Drawing.Point(37, 112)
         Me.lblWinner.Name = "lblWinner"
-        Me.lblWinner.Size = New System.Drawing.Size(176, 29)
+        Me.lblWinner.Size = New System.Drawing.Size(700, 29)
         Me.lblWinner.TabIndex = 8
         Me.lblWinner.Text = "Final Standings"
         Me.lblWinner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
