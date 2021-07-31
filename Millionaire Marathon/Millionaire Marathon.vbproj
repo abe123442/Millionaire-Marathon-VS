@@ -72,33 +72,33 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameDataModule.vb" />
-    <Compile Include="GameClass.vb" />
-    <Compile Include="GameForm.Designer.vb">
+    <Compile Include="Modules\GameDataModule.vb" />
+    <Compile Include="Classes\GameClass.vb" />
+    <Compile Include="Forms\GameForm.Designer.vb">
       <DependentUpon>GameForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="GameForm.vb">
+    <Compile Include="Forms\GameForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameVariablesClass.vb" />
-    <Compile Include="GlobalVariablesModule.vb" />
-    <Compile Include="GraphicsModule.vb" />
-    <Compile Include="HelpForm.Designer.vb">
+    <Compile Include="Classes\GameVariablesClass.vb" />
+    <Compile Include="Modules\GlobalVariablesModule.vb" />
+    <Compile Include="Modules\GraphicsModule.vb" />
+    <Compile Include="Forms\HelpForm.Designer.vb">
       <DependentUpon>HelpForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="HelpForm.vb">
+    <Compile Include="Forms\HelpForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.vb">
+    <Compile Include="Forms\MainForm.Designer.vb">
       <DependentUpon>MainForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.vb">
+    <Compile Include="Forms\MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MillionForm.Designer.vb">
+    <Compile Include="Forms\MillionForm.Designer.vb">
       <DependentUpon>MillionForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="MillionForm.vb">
+    <Compile Include="Forms\MillionForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -117,37 +117,37 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="PlayerClass.vb" />
-    <Compile Include="SetupForm.Designer.vb">
+    <Compile Include="Classes\PlayerClass.vb" />
+    <Compile Include="Forms\SetupForm.Designer.vb">
       <DependentUpon>SetupForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="SetupForm.vb">
+    <Compile Include="Forms\SetupForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuForm.Designer.vb">
+    <Compile Include="Forms\MenuForm.Designer.vb">
       <DependentUpon>MenuForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="MenuForm.vb">
+    <Compile Include="Forms\MenuForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StandingsForm.Designer.vb">
+    <Compile Include="Forms\StandingsForm.Designer.vb">
       <DependentUpon>StandingsForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="StandingsForm.vb">
+    <Compile Include="Forms\StandingsForm.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="GameForm.resx">
+    <EmbeddedResource Include="Forms\GameForm.resx">
       <DependentUpon>GameForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HelpForm.resx">
+    <EmbeddedResource Include="Forms\HelpForm.resx">
       <DependentUpon>HelpForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MillionForm.resx">
+    <EmbeddedResource Include="Forms\MillionForm.resx">
       <DependentUpon>MillionForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -156,13 +156,13 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SetupForm.resx">
+    <EmbeddedResource Include="Forms\SetupForm.resx">
       <DependentUpon>SetupForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuForm.resx">
+    <EmbeddedResource Include="Forms\MenuForm.resx">
       <DependentUpon>MenuForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StandingsForm.resx">
+    <EmbeddedResource Include="Forms\StandingsForm.resx">
       <DependentUpon>StandingsForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
