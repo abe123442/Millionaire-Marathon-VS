@@ -10,6 +10,7 @@
         ' Defines lists of different control types that get assigned via "GetControls" 
         Dim ButtonList As List(Of Button) = GetControls(Of Button)(frm:=Me)
         Dim LabelList As List(Of Label) = GetControls(Of Label)(frm:=Me)
+        LabelList.Add(FrmMillion.lblChallenge)
 
         ' Initialises an instance of the class "GameClass" with several parameters 
         Dim Game As New GameClass(

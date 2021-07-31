@@ -8,7 +8,9 @@
                 AcceptMillion = False
         End Select
         MillionEvent.Set()
+    End Sub
 
+    Private Sub FrmMillion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim btnList As New List(Of Button) From {btnAccept, btnDecline}
         CustomiseButtons(btns:=btnList)
     End Sub

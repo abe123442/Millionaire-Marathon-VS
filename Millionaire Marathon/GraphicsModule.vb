@@ -75,6 +75,7 @@
     End Function
 
     Function GetControlByName(ctrls As IEnumerable(Of Control), name As String) As Control
+        ' A function that finds a control by name and returns it
         For Each ctrl As Control In ctrls
             If ctrl.Name = name Then
                 Return ctrl
