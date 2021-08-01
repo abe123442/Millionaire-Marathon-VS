@@ -16,4 +16,19 @@
         SwitchPanel(FrmGame) ' Switches to the "FrmGame" Form
     End Sub
 
+    ' These two subroutines below just add functionality for the players to change their names
+    Private Sub PlayerNameHover(sender As Object, e As EventArgs) _
+        Handles txtPlayer1.MouseEnter, txtPlayer2.MouseEnter, txtPlayer3.MouseEnter, txtPlayer4.MouseEnter
+        If sender.Text.StartsWith("Player") Then
+            sender.Text = ""
+            sender.ForeColor = Color.Black
+        End If
+    End Sub
+
+    Private Sub PlayerNameUnhover(sender As Object, e As EventArgs) _
+        Handles txtPlayer1.MouseLeave, txtPlayer2.MouseLeave, txtPlayer3.MouseLeave, txtPlayer4.MouseLeave
+        If sender.Text = "" Then
+            sender.Text = sender.Name.Substring(3) ' Takes the text starting (and including) index 3 of sender's name
+        End If
+    End Sub
 End Class

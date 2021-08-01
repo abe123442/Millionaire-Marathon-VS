@@ -45,7 +45,7 @@ Partial Class FrmSetup
         Me.txtPlayer1.ShortcutsEnabled = False
         Me.txtPlayer1.Size = New System.Drawing.Size(175, 31)
         Me.txtPlayer1.TabIndex = 0
-        Me.txtPlayer1.Text = "Player 1"
+        Me.txtPlayer1.Text = "Player1"
         Me.txtPlayer1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblHeading
@@ -83,7 +83,7 @@ Partial Class FrmSetup
         Me.txtPlayer2.ShortcutsEnabled = False
         Me.txtPlayer2.Size = New System.Drawing.Size(175, 31)
         Me.txtPlayer2.TabIndex = 0
-        Me.txtPlayer2.Text = "Player 2"
+        Me.txtPlayer2.Text = "Player2"
         Me.txtPlayer2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblPlayer2
@@ -109,7 +109,7 @@ Partial Class FrmSetup
         Me.txtPlayer3.ShortcutsEnabled = False
         Me.txtPlayer3.Size = New System.Drawing.Size(175, 31)
         Me.txtPlayer3.TabIndex = 0
-        Me.txtPlayer3.Text = "Player 3"
+        Me.txtPlayer3.Text = "Player3"
         Me.txtPlayer3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblPlayer3
@@ -135,7 +135,7 @@ Partial Class FrmSetup
         Me.txtPlayer4.ShortcutsEnabled = False
         Me.txtPlayer4.Size = New System.Drawing.Size(175, 31)
         Me.txtPlayer4.TabIndex = 0
-        Me.txtPlayer4.Text = "Player 4"
+        Me.txtPlayer4.Text = "Player4"
         Me.txtPlayer4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblPlayer4

@@ -2,11 +2,11 @@
     Sub SwitchPanel(frm As Form)
         ' A subroutine that allows the functionality of displaying multiple forms on the same panel
         ' The previous contents of the form is cleared, then the panel adds the new "frm" form and displays it
-        MainForm.PanelMain.Controls.Clear()
+        FrmMain.PanelMain.Controls.Clear()
         frm.TopLevel = False
-        MainForm.PanelMain.Controls.Add(frm)
+        FrmMain.PanelMain.Controls.Add(frm)
         frm.Show()
-        MainForm.PanelMain.BringToFront()
+        FrmMain.PanelMain.BringToFront()
     End Sub
 
     Sub CustomiseButtons(btns As List(Of Button))

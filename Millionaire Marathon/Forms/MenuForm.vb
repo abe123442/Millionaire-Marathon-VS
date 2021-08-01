@@ -15,7 +15,7 @@
             Case "btnHelp"
                 SwitchPanel(FrmHelp) ' Switches form to "FrmHelp"
             Case "btnExit"
-                LastFrm = MainForm
+                LastFrm = FrmMain ' Exits the game
                 ResetLastFrm(Me)
         End Select
     End Sub
