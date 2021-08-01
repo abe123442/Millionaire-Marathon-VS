@@ -73,9 +73,9 @@ Partial Class FrmGame
         Me.btnOption1.FlatAppearance.BorderSize = 0
         Me.btnOption1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnOption1.ForeColor = System.Drawing.Color.Black
-        Me.btnOption1.Location = New System.Drawing.Point(129, 200)
+        Me.btnOption1.Location = New System.Drawing.Point(74, 200)
         Me.btnOption1.Name = "btnOption1"
-        Me.btnOption1.Size = New System.Drawing.Size(225, 77)
+        Me.btnOption1.Size = New System.Drawing.Size(280, 77)
         Me.btnOption1.TabIndex = 2
         Me.btnOption1.UseVisualStyleBackColor = False
         '
@@ -90,7 +90,7 @@ Partial Class FrmGame
         Me.btnOption2.ForeColor = System.Drawing.Color.Black
         Me.btnOption2.Location = New System.Drawing.Point(420, 200)
         Me.btnOption2.Name = "btnOption2"
-        Me.btnOption2.Size = New System.Drawing.Size(225, 77)
+        Me.btnOption2.Size = New System.Drawing.Size(280, 77)
         Me.btnOption2.TabIndex = 2
         Me.btnOption2.UseVisualStyleBackColor = False
         '
@@ -103,9 +103,9 @@ Partial Class FrmGame
         Me.btnOption3.FlatAppearance.BorderSize = 0
         Me.btnOption3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnOption3.ForeColor = System.Drawing.Color.Black
-        Me.btnOption3.Location = New System.Drawing.Point(129, 322)
+        Me.btnOption3.Location = New System.Drawing.Point(74, 322)
         Me.btnOption3.Name = "btnOption3"
-        Me.btnOption3.Size = New System.Drawing.Size(225, 77)
+        Me.btnOption3.Size = New System.Drawing.Size(280, 77)
         Me.btnOption3.TabIndex = 2
         Me.btnOption3.UseVisualStyleBackColor = False
         '
@@ -120,7 +120,7 @@ Partial Class FrmGame
         Me.btnOption4.ForeColor = System.Drawing.Color.Black
         Me.btnOption4.Location = New System.Drawing.Point(420, 322)
         Me.btnOption4.Name = "btnOption4"
-        Me.btnOption4.Size = New System.Drawing.Size(225, 77)
+        Me.btnOption4.Size = New System.Drawing.Size(280, 77)
         Me.btnOption4.TabIndex = 2
         Me.btnOption4.UseVisualStyleBackColor = False
         '

@@ -15,7 +15,8 @@
             Case "btnHelp"
                 SwitchPanel(FrmHelp) ' Switches form to "FrmHelp"
             Case "btnExit"
-                ParentForm.Close() ' Closes "FrmMain" which is the main game window
+                LastFrm = MainForm
+                ResetLastFrm(Me)
         End Select
     End Sub
 End Class

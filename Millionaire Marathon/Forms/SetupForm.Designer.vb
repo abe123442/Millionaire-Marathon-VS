@@ -54,7 +54,7 @@ Partial Class FrmSetup
         Me.lblHeading.BackColor = System.Drawing.Color.Transparent
         Me.lblHeading.Font = New System.Drawing.Font("Montserrat", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHeading.ForeColor = System.Drawing.Color.White
-        Me.lblHeading.Location = New System.Drawing.Point(186, 42)
+        Me.lblHeading.Location = New System.Drawing.Point(186, 54)
         Me.lblHeading.Name = "lblHeading"
         Me.lblHeading.Size = New System.Drawing.Size(403, 40)
         Me.lblHeading.TabIndex = 1

@@ -58,7 +58,7 @@ Partial Class FrmMenu
         Me.lblHeading.AutoSize = True
         Me.lblHeading.BackColor = System.Drawing.Color.Transparent
         Me.lblHeading.Font = New System.Drawing.Font("Montserrat", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHeading.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblHeading.ForeColor = System.Drawing.Color.White
         Me.lblHeading.Location = New System.Drawing.Point(220, 54)
         Me.lblHeading.Name = "lblHeading"
         Me.lblHeading.Size = New System.Drawing.Size(335, 40)
