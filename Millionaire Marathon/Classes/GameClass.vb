@@ -30,6 +30,7 @@
         Dim lblReponse As Label = GetControlByName(ctrls:=Me.Labels, name:="lblReponse")
         Dim btnPass As Button = GetControlByName(ctrls:=Me.Buttons, name:="btnPass")
         Dim lblChallenge As Label = GetControlByName(ctrls:=Me.Labels, name:="lblChallenge")
+
         ' Creates an instance of "GameVariablesClass" and sets a property as an instance of subclass "CurrentPlayerInfoClass"
         Dim Vars As New GameVariablesClass With {
             .CurrentPlayerInfo = New GameVariablesClass.CurrentPlayerInfoClass
@@ -121,6 +122,7 @@
                 ButtonClick.Reset() ' Resets the option event so that it can be triggered again for another player
             Next
         Next
+        PlayMusic(Update:=True) ' Plays podium music
         SwitchPanel(nextForm) ' Switches to the next form once the game is over
     End Sub
 End Class

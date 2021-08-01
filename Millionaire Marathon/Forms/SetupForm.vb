@@ -13,6 +13,7 @@
         {"Player 4", New PlayerClass(txtPlayer4.Text)}
         }
 
+        PlayMusic(Update:=True)
         SwitchPanel(FrmGame) ' Switches to the "FrmGame" Form
     End Sub
 

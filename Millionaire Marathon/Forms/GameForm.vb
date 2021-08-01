@@ -1,11 +1,12 @@
 ﻿Public Class FrmGame
     Dim OptionEvent As New Threading.ManualResetEvent(False) ' An event that gets triggered
-    Private ReadOnly Rounds As List(Of ArrayList) = GetRounds(GetQuestions(FilePath))
+    Private ReadOnly Rounds As List(Of ArrayList) = GetRounds(GetQuestions(QuestionsFilePath))
 
     Private Sub FrmGame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LastFrm = Me ' Sets the last active form to "Me" - allowing the game to be reset later on
         SetStyle(ControlStyles.SupportsTransparentBackColor, True) ' Allows transparent background
         BackColor = Color.FromArgb(0, Color.Black) ' Sets a transparent background
+
 
         ' Defines lists of different control types that get assigned via "GetControls" 
         Dim ButtonList As List(Of Button) = GetControls(Of Button)(frm:=Me)
