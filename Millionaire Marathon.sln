@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Millionaire Marathon", "Millionaire Marathon\Millionaire Marathon.vbproj", "{712DA89F-C4F4-4861-B28B-A4727229FA7E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MM Installer", "MM Installer\MM Installer.vdproj", "{B491DAE8-37E4-40D0-B7A3-3AE6E7F8F5E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{712DA89F-C4F4-4861-B28B-A4727229FA7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{712DA89F-C4F4-4861-B28B-A4727229FA7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{712DA89F-C4F4-4861-B28B-A4727229FA7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B491DAE8-37E4-40D0-B7A3-3AE6E7F8F5E5}.Debug|Any CPU.ActiveCfg = Debug
+		{B491DAE8-37E4-40D0-B7A3-3AE6E7F8F5E5}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
