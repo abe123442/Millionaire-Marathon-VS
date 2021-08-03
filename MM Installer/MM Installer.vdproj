@@ -51,7 +51,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_AAE7DFC58F5340C8A22EF87D503F8A77"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C54BF7986DF341988C78E0CC8868EFDB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CB8FB411A5994EFEB9ED111AFFA474A2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -88,7 +100,7 @@
         "IsDebugOnly" = "11:TRUE"
         "IsReleaseOnly" = "11:FALSE"
         "OutputFilename" = "8:Debug\\MM Installer.msi"
-        "PackageFilesAs" = "3:2"
+        "PackageFilesAs" = "3:1"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
         "Compression" = "3:3"
@@ -123,7 +135,7 @@
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
-        "Compression" = "3:2"
+        "Compression" = "3:3"
         "SignOutput" = "11:FALSE"
         "CertificateFile" = "8:"
         "PrivateKeyFile" = "8:"
@@ -136,6 +148,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -277,12 +297,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AAE7DFC58F5340C8A22EF87D503F8A77"
+            {
+            "SourcePath" = "8:..\\Millionaire Marathon\\bin\\Debug\\assets\\icons\\icon_square.ico"
+            "TargetName" = "8:icon_square.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_8D407901E934431494CC5D92BB00B0A2"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C54BF7986DF341988C78E0CC8868EFDB"
             {
             "SourcePath" = "8:..\\Millionaire Marathon\\bin\\Debug\\assets\\audio\\outro.wav"
             "TargetName" = "8:outro.wav"
             "Tag" = "8:"
             "Folder" = "8:_A0FBA8D2FAC342909FB30A79F546EF4A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CB8FB411A5994EFEB9ED111AFFA474A2"
+            {
+            "SourcePath" = "8:..\\Millionaire Marathon\\bin\\Debug\\assets\\icons\\icon_circle.ico"
+            "TargetName" = "8:icon_circle.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_8D407901E934431494CC5D92BB00B0A2"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -373,6 +433,17 @@
                     "Property" = "8:_8A8B91FABB454DB5A18BBB6C41EFE7B4"
                         "Folders"
                         {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_8D407901E934431494CC5D92BB00B0A2"
+                            {
+                            "Name" = "8:icons"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_811A450DA3BC4D92B07B10507D2D417C"
+                                "Folders"
+                                {
+                                }
+                            }
                             "{9EF0B969-E518-4E46-987F-47570745A589}:_A0FBA8D2FAC342909FB30A79F546EF4A"
                             {
                             "Name" = "8:audio"
@@ -427,7 +498,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Millionaire Marathon"
         "ProductCode" = "8:{ABFB4EDE-9E3D-425E-A787-444FB4BD10FD}"
-        "PackageCode" = "8:{35EF51B6-779B-4C35-9715-5D74B9AFC4EF}"
+        "PackageCode" = "8:{CCEE6744-5386-451B-AF2C-B075540969B0}"
         "UpgradeCode" = "8:{AB64332C-EBC4-4E5C-8B8B-41CF9369B225}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

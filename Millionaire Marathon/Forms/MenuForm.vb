@@ -10,13 +10,12 @@
         ResetLastFrm(frm:=Me) ' Resets the previous form
         Select Case sender.Name
             Case "btnPlay"
-                FrmStandings = Nothing ' This allows for the previous forms to be reset, allowing game replayability
                 SwitchPanel(FrmSetup) ' Switches form to "FrmSetup"
             Case "btnHelp"
                 SwitchPanel(FrmHelp) ' Switches form to "FrmHelp"
             Case "btnExit"
                 LastFrm = FrmMain ' Exits the game
-                ResetLastFrm(Me)
+                ResetLastFrm(frm:=Me)
         End Select
     End Sub
 End Class

@@ -83,7 +83,7 @@
                         btnPass.Text = $"{Players(PlayerID).Name} cannot pass!"
                         btnPass.Enabled = False
                     Else
-                        btnPass.Text = "Pass"
+                        btnPass.Text = $"Passes: {Players(PlayerID).Passes} left"
                         btnPass.Enabled = True
                     End If
                 End If
@@ -95,28 +95,28 @@
                     End Sub)
 
                 ' This code block determines if a player was correct, incorrect or passed
-                Select Case Response
-                    ' If the player is correct
-                    Case Vars.CurrentQuestionInfo.CorrectAnswer
-                        ' Updates the "Money" and questions answered ("Qansd") properties of a player (PlayerClass instance)
-                        Players(PlayerID).Money = 2 ^ (Players(PlayerID).Qansd)
-                        Players(PlayerID).Qansd += 1
-                        lblReponse.Text = $"{Players(PlayerID).Name} is correct!"
-                    Case "pass", "Pass", "PASS"
-                        ' Decrements "Passes" property of a player (PlayerClass instance) and "Question" by 1
-                        ' "Question" is decremented so that the same question displays when "Question" increments in the loop
-                        Players(PlayerID).Passes -= 1
-                        lblReponse.Text = $"{Players(PlayerID).Name} passes with {Players(PlayerID).Passes}/5 passes left."
-                        Question -= 1
-                    Case Else
-                        lblReponse.Text = $"{Players(PlayerID).Name} is wrong!"
-                        ' Unfortunately the player loses all their earnings here :(
-                        If AcceptMillion Then
-                            Players(PlayerID).Money = 0
-                            AcceptMillion = False
-                            SwitchPanel(nextForm)
-                        End If
-                End Select
+                If Response = Vars.CurrentQuestionInfo.CorrectAnswer Then ' If the player is correct
+                    ' Updates the "Money" and questions answered ("Qansd") properties of a player (PlayerClass instance)
+                    Players(PlayerID).Money = 2 ^ (Players(PlayerID).Qansd)
+                    Players(PlayerID).Qansd += 1
+                    lblReponse.Text = $"{Players(PlayerID).Name} is correct!"
+
+                ElseIf Response.StartsWith("Pass") Then
+                    ' Decrements "Passes" property of a player (PlayerClass instance) and "Question" by 1
+                    ' "Question" is decremented so that the same question displays when "Question" increments in the loop
+                    Players(PlayerID).Passes -= 1
+                    lblReponse.Text = $"{Players(PlayerID).Name} passes with {Players(PlayerID).Passes}/5 passes left."
+                    Question -= 1
+
+                Else
+                    lblReponse.Text = $"{Players(PlayerID).Name} is wrong!"
+                    ' Unfortunately the player loses all their earnings here :(
+                    If AcceptMillion Then
+                        Players(PlayerID).Money = 0
+                        AcceptMillion = False
+                        SwitchPanel(nextForm)
+                    End If
+                End If
 
                 Vars.CurrentPlayerInfo.ChangeCurrentPlayer() ' Changes the player every question
                 ButtonClick.Reset() ' Resets the option event so that it can be triggered again for another player

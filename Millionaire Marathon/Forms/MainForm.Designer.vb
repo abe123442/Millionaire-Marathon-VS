@@ -46,6 +46,7 @@ Partial Class FrmMain
         Me.ClientSize = New System.Drawing.Size(780, 507)
         Me.Controls.Add(Me.PanelMain)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(800, 550)
         Me.Name = "FrmMain"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.No
