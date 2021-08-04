@@ -1,2 +1,2 @@
-Please run "setup.exe" to install the game.
-"MM Installer.msi" is only to be run when uninstalling or repairing the game.
+Please run "MM Installer.msi" to install the game.
+Use the control panel to uninstall the game.
