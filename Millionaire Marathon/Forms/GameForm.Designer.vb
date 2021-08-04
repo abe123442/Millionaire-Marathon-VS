@@ -33,6 +33,7 @@ Partial Class FrmGame
         Me.lblMoney = New System.Windows.Forms.Label()
         Me.lblReponse = New System.Windows.Forms.Label()
         Me.btnPass = New System.Windows.Forms.Button()
+        Me.btnNext = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblRound
@@ -178,12 +179,27 @@ Partial Class FrmGame
         Me.btnPass.BackColor = System.Drawing.Color.Transparent
         Me.btnPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPass.ForeColor = System.Drawing.Color.Black
-        Me.btnPass.Location = New System.Drawing.Point(244, 420)
+        Me.btnPass.Location = New System.Drawing.Point(74, 426)
         Me.btnPass.Name = "btnPass"
-        Me.btnPass.Size = New System.Drawing.Size(286, 36)
+        Me.btnPass.Size = New System.Drawing.Size(280, 36)
         Me.btnPass.TabIndex = 5
         Me.btnPass.Text = "Pass"
         Me.btnPass.UseVisualStyleBackColor = False
+        '
+        'btnNext
+        '
+        Me.btnNext.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnNext.BackColor = System.Drawing.Color.Transparent
+        Me.btnNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNext.ForeColor = System.Drawing.Color.Black
+        Me.btnNext.Location = New System.Drawing.Point(420, 426)
+        Me.btnNext.Name = "btnNext"
+        Me.btnNext.Size = New System.Drawing.Size(280, 36)
+        Me.btnNext.TabIndex = 6
+        Me.btnNext.Text = "Next"
+        Me.btnNext.UseVisualStyleBackColor = False
         '
         'FrmGame
         '
@@ -193,6 +209,7 @@ Partial Class FrmGame
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(775, 500)
+        Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.btnPass)
         Me.Controls.Add(Me.lblReponse)
         Me.Controls.Add(Me.btnOption4)
@@ -223,4 +240,5 @@ Partial Class FrmGame
     Friend WithEvents lblMoney As Label
     Friend WithEvents lblReponse As Label
     Friend WithEvents btnPass As Button
+    Friend WithEvents btnNext As Button
 End Class
