@@ -42,12 +42,12 @@
                 questions.Add(MyReader.ReadFields())
             End While
         End Using
-        'Call ShuffleArray(arr:=questions)
+        Call ShuffleArray(arr:=questions)
         Return questions
     End Function
 
     Sub ShuffleArray(arr As ArrayList)
-        ' A function that returns a randomised "arr" arraylist, by using the "Fisher–Yates shuffle" algorithm
+        ' A subroutine that returns a randomised "arr" arraylist, by using the "Fisher–Yates shuffle" algorithm
         ' which generates a random permutation of a finite sequence (in this case, an "ArrayList")
         Dim lastIndex As Integer = arr.Count - 1
         Dim randIndex As Integer

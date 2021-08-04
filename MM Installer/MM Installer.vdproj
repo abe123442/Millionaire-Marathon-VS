@@ -143,7 +143,7 @@
         "InstallerBootstrapper" = "3:2"
             "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
             {
-            "Enabled" = "11:TRUE"
+            "Enabled" = "11:FALSE"
             "PromptEnabled" = "11:TRUE"
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
@@ -479,6 +479,17 @@
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_B884A6992DA047EE9E0BDA893A6612BA"
+                    {
+                    "Name" = "8:Millionaire Marathon"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_537647E43B3045BE97CEDEE53E38F631"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
         }
@@ -498,7 +509,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Millionaire Marathon"
         "ProductCode" = "8:{ABFB4EDE-9E3D-425E-A787-444FB4BD10FD}"
-        "PackageCode" = "8:{8487BE55-E74D-4AD9-9669-0AA061051F49}"
+        "PackageCode" = "8:{89A59A4C-6167-4914-832A-3CBC60A67E27}"
         "UpgradeCode" = "8:{AB64332C-EBC4-4E5C-8B8B-41CF9369B225}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -618,6 +629,34 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A2DB5E499B444AE38CF62A545F7F90BF"
+            {
+            "Name" = "8:Millionaire Marathon"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_3529F64FBC0A4E13904319F7D092D6A4"
+            "Folder" = "8:_B884A6992DA047EE9E0BDA893A6612BA"
+            "WorkingFolder" = "8:_30F5305C57194ED38870FFA5427B36C6"
+            "Icon" = "8:_AAE7DFC58F5340C8A22EF87D503F8A77"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F2F73675EA8B40D5A55C2AFA8FB54D37"
+            {
+            "Name" = "8:Millionaire Marathon"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_3529F64FBC0A4E13904319F7D092D6A4"
+            "Folder" = "8:_0E85323949684EA18FD772784DA2D863"
+            "WorkingFolder" = "8:_30F5305C57194ED38870FFA5427B36C6"
+            "Icon" = "8:_AAE7DFC58F5340C8A22EF87D503F8A77"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
@@ -651,7 +690,7 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:0"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -673,7 +712,7 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:0"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "EulaText"
@@ -720,7 +759,7 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:0"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -742,8 +781,7 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:2"
-                            "Value" = "8:_234E741B7F0548B494B71A653730209D"
+                            "Setting" = "3:0"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "CopyrightWarning"
@@ -806,7 +844,7 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:0"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "ShowProgress"
@@ -833,7 +871,7 @@
             "Attributes" = "3:2"
                 "Dialogs"
                 {
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_4F69A53147194CC785E033E0692DBC0B"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_87CA8A9B0EB84B738DFC7D87539DB0D0"
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:Progress"
@@ -850,7 +888,7 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:0"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "ShowProgress"
@@ -894,8 +932,7 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:2"
-                            "Value" = "8:_234E741B7F0548B494B71A653730209D"
+                            "Setting" = "3:0"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "CopyrightWarning"
@@ -943,7 +980,7 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:0"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -965,7 +1002,7 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:0"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "InstallAllUsersVisible"
@@ -1000,8 +1037,7 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:2"
-                            "Value" = "8:_55CC6D617C43420B9F5EAE7F4B7FA469"
+                            "Setting" = "3:0"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "EulaText"
@@ -1057,7 +1093,7 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:0"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -1088,7 +1124,7 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:0"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "UpdateText"
@@ -1116,7 +1152,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_3529F64FBC0A4E13904319F7D092D6A4"
             {
-            "SourcePath" = "8:..\\Millionaire Marathon\\obj\\Debug\\Millionaire Marathon.exe"
+            "SourcePath" = "8:..\\Millionaire Marathon\\obj\\Release\\Millionaire Marathon.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_30F5305C57194ED38870FFA5427B36C6"
