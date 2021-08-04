@@ -1,0 +1,81 @@
+﻿What does the abbreviation 'IPO' stand for?,"Input, Process, Output","Input, Product, Output","Initial, Progress, Output","Initial, Payload, Offload","Input, Process, Output"
+What stage shows the various interfaces of the system and their links?,Storyboard,Storyline,Diagram,Photoboard,Storyboard
+What must you always start with in a Pseudocode algorithm?,BEGIN,START,TOP,ON,BEGIN
+What must you always end with in a Pseudocode algorithm?,END,FINISH,BOTTOM,OFF,END
+What symbol represents 'Process' in a Context Diagram?,A circle,A square,A triangle,A rectangle,A circle
+What symbol represents 'Data Flow' in a Context Diagram?,An arrow,A triangle,A line,A rectangle,An arrow
+What symbol represents 'External Entity'  in a Context Diagram?,A square,A rectangle,A trapezium,A circle,A square
+What symbol represents 'Data Store' in a Context Diagram?,A rectangle with an open side on the right,A rectangle with an open side on the left,A circle,A line,A rectangle with an open side on the right
+What is a System Flowchart?,A representation of the flow of data and logic,A chart that represents the system interfaces,A flowchart that shows the components of the computer,A flowchart to navigate a computer,A representation of the flow of data and logic
+What is a Processing Operation in a System Flowchart?,Manual Operation,Automatic Operation,Processing Operation,System Operation,Manual Operation
+What is a Processing Operation in a System Flowchart?,Process,Manual Operation,Processing Operation,System Operation,Process
+What is 'Processing Operation' represented as in System Flowcharts?,An upside-down trapezium,A triangle,A flowchart,A circle,An upside-down trapezium
+What is 'Process' represented as in System Flowcharts?,A rectangle,A square,A rectangle with an open side to the right,A circle,A rectangle
+What is an Output Device in a System Flowchart?,Online Display,Touch-screen Display,A  Monitor, A mouse,Online Display
+What is an Output Device in a System Flowchart?,Paper Document,Microphone,A  karaoke,A keyboard,Paper Document
+What is an Input Device in a System Flowchart?,Online Input,Online Display,A phone,Offline Input,Online Input
+What is a Storage Media in a System Flowchart?,Direct Access Storage Device,File Explorer,A website,A document,Direct Access Storage Device
+What is a Storage Media in a System Flowchart?,Magnetic Tape,Printer,A ring network,A bus network,Magnetic Tape
+What is a Storage Media in a System Flowchart?,Punched Card,Wireless Mouse,A keyboard,A USB,Punched Card
+What is 'Input / Output' represented as in a System Flowchart?,A parallelogram,A circle,A decagon,A triangle,A parallelogram
+What is 'Decision' represented as in a System Flowchart?,A diamond,A square,A circle,A triangle,A diamond
+What is 'Telecommunications Link' represented as in a System Flowchart?,A zig-zag,A trapezium,A line,A parellelogran,A zig-zag
+What is 'Data Flow' represented as in a System Flowchart?,An arrow,A line,A triangle,A triangle,An arrow
+What is 'Online Display' used for?,To show data display on a monitor,To light up the screen panel,To show data display on a mouse,To show data display on a keyboard,To show data display on a monitor
+What is 'Manual Operation' used for?,For non-computer-assisted operations,To operate the GPU with manual inputs,To display online,To manually transfer data,For non-computer-assisted operations
+What is 'Process' used for?,For operations performed by the computer,For operations assisted without the computer,To process everything,To process information through a profressor,For operations performed by the computer
+What is 'Paper Document' used for?,"For printed output such as reports, letters, etc.",To document paper on a digital file ,To utilise paper processing efficiency,To produce paper-free documents,"For printed output such as reports, letters, etc."
+When is 'Direct Access Storage Device' used?,"When data is stored on hard disk, CD-ROM, DVD, etc.",To speed up the CPU,To store data on a paper,To slow down the CPU,"When data is stored on hard disk, CD-ROM, DVD, etc."
+"When is 'Online Input"" used?",If data is input via. keyboard or device attached to computer,When you are using the internet,When you input data but wi-fi is not on,When you input data but wi-fi is on,If data is input via. keyboard or device attached to computer
+What is a Gantt Chart?,A type of Bar Chart that shows a project schedule,A type of Line Chart that shows a project schedule,A big chart,A computerized pie chart,A type of Bar Chart that shows a project schedule
+What is a Gantt Chart used for?,To inform members of the project schedule,To track data of the processes,To show animals,To represent data in a pie char but for computers,To inform members of the project schedule
+What is a Data Dictionary?,"A centralised repository of information about data such as meaning, relationships to other data, origin, usage, and format.",A dictionary that only defines data,A dictionary about computers,It is a software in every computer,"A centralised repository of information about data such as meaning, relationships to other data, origin, usage, and format."
+What is a Data Dictionary used for?,To provide detailed information about the contents of a dataset or database.,To display information through the output to the user,To search data about computers,To look up diffrent definitions of data,To provide detailed information about the contents of a dataset or database.
+Which one of these is a computing language?,Python,PROG,C—,LINX,Python
+Which one of these is a computing language?,Liberty Basic,Objective-D,COM,HYPERcode,Liberty Basic
+Which one of these is a computing language?,JAVA,SQLD,LKText,MAXILOG,JAVA
+Which one of these is a computing language?,C++,SQI,HTTPS,UNILOGY,C++
+Which one of these is a computing language?,HTML,HAPS,CPUL,HTTP,HTML
+What does HTML stand for?,Hyper Text Markup Language,High Technology Modding Language,Hyper Text Makeup Language,Hypnosis Text Markup Language,Hyper Text Markup Language
+When was HTML created?,1993,1995,1998,1992,1993
+Who wrote the first version of HTML?,Tim Berners-Lee,Michael Porter,Steve Bernard,John Kelland-Simmons,Tim Berners-Lee
+What does CPU stand for?,Central Processing Unit,Computing Processing Unit,Central Primary Unit,Command Power Unit,Central Processing Unit
+What does GPU stand for?,Graphics Processing Unit,Graphics Producing Unit,Graphics Photo-rendering Unit,General Part Repairing,Graphics Processing Unit
+What does RAM stand for?,Random Access Memory,Reallocated Access Memory,Rendering Anti Malware,Reallocated Attention Margin,Random Access Memory
+What is a Floating Point?,A noninteger fractional number ,A whole number,A value that is specifically of a Denary value.,A squared value,A noninteger fractional number 
+What is a Decimal?,A fraction whose denominator is a power of ten and whose numerator is expressed by figures placed to the right of a decimal point.,A value that is divided by ten,A value that can not be divided by any number other than 1 and itself,A number that is of a whole complete value,A fraction whose denominator is a power of ten and whose numerator is expressed by figures placed to the right of a decimal point.
+What is the first computer in history?,ENIAC Machine,Macintosh,Microsoft Altair 8800,Oracle,ENIAC Machine
+"Who is known as the ""Father of the Internet""?",Vint Cerf,Steve Jobs,Shaun Livingston,Joshua Kinsmenn,Vint Cerf
+What is the command to copy text?,Ctrl + C,Ctrl + V,Ctrl + S,Ctrl + Shift ,Ctrl + C
+What is the command to paste text?,Ctrl + V,Ctrl + C,Ctrl + P,Ctrl + Alt,Ctrl + V
+What is the command to refresh the page?,Ctrl + R,Ctrl + F,Ctrl + S,Ctrl + UpArrow,Ctrl + R
+How do you open a new tab?,Ctrl + T,Ctrl + N,Ctrl + Ctrl,Ctrl + Tab,Ctrl + T
+What is the command to cut text?,Ctrl + X,Ctrl + C,Ctrl + C,Ctrl + Delete,Ctrl + X
+How do you switch tabs to the right tab?,Ctrl + Tab,Ctrl + R,Ctrl + >,Ctrl + \,Ctrl + Tab
+How do you switch tabs to the left tab?,Ctrl + Shift + Tab,Ctrl + L,Ctrl + <,Ctrl + /,Ctrl + Shift + Tab
+How do you close your current tab?,Ctrl + W,Ctrl + C + T,Ctrl + X,Ctrl + Delete\,Ctrl + W
+How do you recover deleted tabs?,Ctrl + Shift + T,Ctrl + D + T,Ctrl + 0,Ctrl + Tab,Ctrl + Shift + T
+What is the command to navigate directly to the search bar?,Ctrl + E,Ctrl + S,Ctrl + 1,Ctrl + ^,Ctrl + E
+How do you select all elements in the current tab?,Ctrl + A,Ctrl + E,Ctrl + Alt,Ctrl + *,Ctrl + A
+Who is the father of robotics?,Ben Skora,Isaac Asimov,Pierre-Emerick Aubameyang,Andre Ingram,Ben Skora
+Who invented the Laws of Robotics?,Isaac Asimov,Ben Skora,Isaac Newton,Jeffery Jordan,Isaac Asimov
+Which one of these are part of the Laws of Robotics?,"A robot may not injure a human being or, through inaction, allow a human being to come to harm.",A robot must aid it's human in a way that does not conflict with the First Law,A robot must confine to itself own surroundings ,"A robot must always follow it's owner's orders, regardless of any limitations.","A robot may not injure a human being or, through inaction, allow a human being to come to harm."
+Which one of these are part of the Laws of Robotics?,A robot must obey the orders given it by human beings except where such orders would conflict with the First Law.,A robot must obey the orders given it by human beings where such orders would conflict with the First Law,A robot must follow all human orders no matter what.,A robot must aid it's human in a way that does not conflict with the First Law,A robot must obey the orders given it by human beings except where such orders would conflict with the First Law.
+Which one of these are part of the Laws of Robotics?,A robot must protect its own existence as long as such protection does not conflict with the First or Second Laws.,A robot must obey the orders given it by human being except where such orders would conflict with the Third Law. ,A robot must not cook at any time,A robot must follow all human orders no matter what.,A robot must protect its own existence as long as such protection does not conflict with the First or Second Laws.
+What is one of the responsibilities of a Database Administrator?,Monitoring user access and security,Updating the Database with new inputs,To provide training for users,Provide training to users of the new systems,Monitoring user access and security
+What is one of the responsibilities of a System Analyst?,Analysing clients existing systems.,Analysing the components of the system,To design software,Monitoring network security,Analysing clients existing systems.
+What is the first digitally operated and programmable robot called?,Unimate,Decibot,Numerator,Denominator,Unimate
+Who invented the first digitally operated and programmable robot?,George C. Devol,Jane P. Joelkansen,Lyndon B. Jhonson,George Graham,George C. Devol
+In which year was the first digitally operated and programmable robot invented?,1954,1953,1999,2000,1954
+What is one of the responsibilities of a Network Engineer?,"Setting up user accounts, permissions and passwords.",Fixing any issues with the Network,Testing websites,Identifying potential solutions,"Setting up user accounts, permissions and passwords."
+What is one of the responsibilities of a Software Developer?,Programming test versions of software.,Developing physical components of the computer,Monitoring disk storage,Managing emails,Programming test versions of software.
+When would you use an array?,When there is a need to use many variables of the same type.,When there is only one variable in the system,To output data,To perform a while loop,When there is a need to use many variables of the same type.
+What is a variable?,A container for different types of data.,A name for a given procedure,A keyword logged to produce an integer,A symbol used to only output data,A container for different types of data.
+What is one of the responsibilities of a Computer Programmer?,Reviewing and updating programs.,Programming and soldering the chipset and other hardware components,Preparing training manuals,Monitoring available disk storage,Reviewing and updating programs.
+What is one of the responsibilities of a Web Developer?,Testing Websites and identifying any technical problems.,To check for copyrights of the website,To produce a design for the software application,Managing emails,Testing Websites and identifying any technical problems.
+What is the advantage of a Solid State Drive?,It is durable and is extremely reliable.,It does not evaporate or condense in different temperatures,It is expensive per Gb,It has random write speeds,It is durable and is extremely reliable.
+Which one of these is the formula to getting a Denary number?,2 to the power of x,x to the power of 2,x * (x+1),x^x,2 to the power of x
+What is the disadvantage of a Solid State Drive?,It is expensive per GB stored compared to hard disk drivers.,It won't evaporate or condense in different temperatures,It is durable,It has a very fast read spped,It is expensive per GB stored compared to hard disk drivers.
+What is the advantage of a flash drive?,It is easy to access and transfer data.,They are easily lost and broken,There is a high cost per GB stored,They are big,It is easy to access and transfer data.
+What is the disadvantage of a flash drive?,They are easily lost and broken.,It is easy to access and transfer data,Data is not lost.,They are not easy to bring around portability-wise,They are easily lost and broken.
+Why did we invent robots in the first place?,To satisfy the curiosity of humans through the current technology they have by producing another human-like form and being the 'God' of such being whilst being a mere mortal.,To ease the strenuous day-to-day activities that are associated with a human's life by doing their duties for them.,To advance technology and further the development towards their ideal future of metropolitan flying cars and a technologically reliant society.,To produce a companion that we humans can co-exist with in the future in a society of both humans robots.,To satisfy the curiosity of humans through the current technology they have by producing another human-like form and being the 'God' of such being whilst being a mere mortal.
