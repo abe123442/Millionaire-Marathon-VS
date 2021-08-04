@@ -2,20 +2,23 @@
     ' The main game class that is instantiated to run the game in "FrmGame"
     Property Buttons As List(Of Button)
     Property Labels As List(Of Label)
-    Property ButtonClick As Threading.ManualResetEvent
+    Property ResponseEvent As Threading.ManualResetEvent
+    Property NextEvent As Threading.ManualResetEvent
     Property MillionEvent As Threading.ManualResetEvent
     Property Players As Hashtable
     Property Rounds As List(Of ArrayList) ' Contains 4 rounds, each round containing 20/21 questions
 
     ' Class constructor - used for initialising a class instance
     Sub New(
-           buttonclick As Threading.ManualResetEvent,
+           response_event As Threading.ManualResetEvent,
+           nextevent As Threading.ManualResetEvent,
            millionevent As Threading.ManualResetEvent,
            players As Hashtable,
            rounds As List(Of ArrayList),
            buttons As List(Of Button),
            labels As List(Of Label))
-        Me.ButtonClick = buttonclick
+        Me.ResponseEvent = response_event
+        Me.NextEvent = nextevent
         Me.MillionEvent = millionevent
         Me.Players = players
         Me.Rounds = rounds
@@ -41,9 +44,11 @@
     ' (Note: this function is asynchronuous and is only run once for every game played)
     Async Sub MainGame(nextForm As Form)
         ' Getting the labels which will be updated by game logic
-        Dim lblReponse As Label = GetControlByName(ctrls:=Me.Labels, name:="lblReponse")
-        Dim btnPass As Button = GetControlByName(ctrls:=Me.Buttons, name:="btnPass")
-        Dim lblChallenge As Label = GetControlByName(ctrls:=Me.Labels, name:="lblChallenge")
+        Dim lblMoney As Label = GetControlByName(Me.Labels, "lblMoney")
+        Dim lblReponse As Label = GetControlByName(Me.Labels, "lblReponse")
+        Dim lblChallenge As Label = GetControlByName(Me.Labels, "lblChallenge")
+        Dim btnPass As Button = GetControlByName(Me.Buttons, "btnPass")
+        Dim btnNext As Button = GetControlByName(Me.Buttons, "btnNext")
 
         Dim PlayerID As String
 
@@ -52,39 +57,52 @@
             GameVars.CurrentRound = Rounds.IndexOf(Round) + 1 ' Assignment to "CurrentRound" in "GameVars"
             For QuestionNo = 0 To Round.Count - 1
 
-                GameVars.CurrentQuestionInfo = GetCurrentQuestionInfo(Round:=Round, QuestionNo:=QuestionNo)
+                GameVars.CurrentQuestionInfo = GetCurrentQuestionInfo(Round, QuestionNo)
                 PlayerID = GameVars.CurrentPlayerInfo.CurrentPlayerID ' Assigns to "CurrentPlayerID" in the subclass "CurrentPlayerInfo" 
 
-                CheckMillion(PlayerID:=PlayerID, lblChallenge:=lblChallenge) ' Executes only if a player is 1 correct question away from $1M
+                CheckMillion(PlayerID, lblChallenge) ' Executes only if a player is 1 correct question away from $1M
 
                 ' Updates the visual information of the game; e.g in "FrmGame"
-                PopulateButtons(btns:=Me.Buttons, info:=GameVars.CurrentQuestionInfo.OptionsAnswersArray)
-                PopulateLabels(lbls:=Me.Labels, vars:=GameVars)
+                PopulateButtons(Me.Buttons, GameVars.CurrentQuestionInfo.OptionsAnswersArray)
+                PopulateLabels(Me.Labels, GameVars)
 
-                ' This code block determines if a player can pass or not, and displays an appropriate message
-                DisplayPassCheck(PlayerID:=PlayerID, btnPass:=btnPass)
+                ' Checks if a player can pass or not, and displays an appropriate message
+                DisplayPassCheck(PlayerID, btnPass)
 
                 ' Waits for a player to select an option guess the answer
                 Await Task.Run(
                     Sub()
-                        ButtonClick.WaitOne()
+                        ResponseEvent.WaitOne()
                     End Sub)
 
                 ' This code block determines if a player was correct, incorrect or passed
-                DisplayEvaluation(response:=Response, lblReponse:=lblReponse, btnPass:=btnPass, nextForm:=nextForm)
+                DisplayEvaluation(Response, lblReponse, btnPass, btnNext, nextForm)
+
+                btnNext.Enabled = True
+                btnNext.Text = "Next"
+                lblMoney.Text = $"Money: ${(Players(GameVars.CurrentPlayerInfo.CurrentPlayerID).Money)}"
+
+                Await Task.Run(
+                    Sub()
+                        NextEvent.WaitOne()
+                    End Sub)
+
 
                 GameVars.CurrentPlayerInfo.ChangeCurrentPlayer() ' Changes the player every question
-                ButtonClick.Reset() ' Resets the option event so that it can be triggered again for another player
+
+                ' Resets the events so that it can be triggered again
+                NextEvent.Reset()
+                ResponseEvent.Reset()
             Next
         Next
         PlayMusic(Update:=True) ' Plays podium music
-        SwitchPanel(nextForm) ' Switches to the next form once the game is over
+        PanelSwitchForm(nextForm) ' Switches to the next form once the game is over
     End Sub
 
     Private Async Sub CheckMillion(PlayerID As String, lblChallenge As Label)
         ' Executes only if a player is 1 correct question away from $1M
         If Players(PlayerID).Money = 2 ^ 19 Then
-            SwitchPanel(frm:=FrmMillion) ' Switches to the challenge offer form
+            PanelSwitchForm(FrmMillion) ' Switches to the challenge offer form
             lblChallenge.Text = $"{Players(PlayerID).Name}, do you want to risk losing all your earnings to have a chance at winning $1048576 ?"
 
             ' Async functions can wait for certain tasks to be completed before running any more code
@@ -97,7 +115,7 @@
             If AcceptMillion = False Then
                 GameVars.CurrentPlayerInfo.ChangeCurrentPlayer()
             End If
-            SwitchPanel(frm:=FrmGame) ' Switches back to the game form
+            PanelSwitchForm(FrmGame) ' Switches back to the game form
             MillionEvent.Reset() ' Resets the event so that it can get triggered again
         End If
     End Sub
@@ -118,9 +136,9 @@
         Pass
     End Enum
 
-    Private Sub DisplayEvaluation(response As String, lblReponse As Label, btnPass As Button, nextForm As Form)
+    Private Sub DisplayEvaluation(response As String, lblReponse As Label, btnPass As Button, btnNext As Button, nextForm As Form)
         Dim PlayerID As String = GameVars.CurrentPlayerInfo.CurrentPlayerID
-        Select Case EvaluateResponse(response:=response)
+        Select Case EvaluateResponse(response)
             Case Evaluation.Correct
                 ' Updates the "Money" and questions answered ("Qansd") properties of a player (PlayerClass instance)
                 Players(PlayerID).Money = 2 ^ (Players(PlayerID).Qansd)
@@ -130,6 +148,7 @@
                 ' Decrements "Passes" property of a player (PlayerClass instance) and "Question" by 1
                 ' "Question" is decremented so that the same question displays when "Question" increments in the loop
                 Players(PlayerID).Passes -= 1
+                btnPass.Text = $"Passes: {Players(PlayerID).Passes} left"
                 lblReponse.Text = $"{Players(PlayerID).Name} passes with {Players(PlayerID).Passes}/5 passes left."
                 GameVars.CurrentQuestionInfo.CurrentQuestionNo -= 1
             Case Evaluation.Incorrect
@@ -138,9 +157,10 @@
                 If AcceptMillion Then
                     Players(PlayerID).Money = 0
                     AcceptMillion = False
-                    SwitchPanel(nextForm)
+                    PanelSwitchForm(nextForm)
                 End If
         End Select
+        btnNext.Show()
     End Sub
     Private Function EvaluateResponse(response As String)
         Dim PlayerID As String = GameVars.CurrentPlayerInfo.CurrentPlayerID

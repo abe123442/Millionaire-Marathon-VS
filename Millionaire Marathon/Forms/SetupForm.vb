@@ -2,7 +2,7 @@
     Private Sub FrmSetup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetStyle(ControlStyles.SupportsTransparentBackColor, True) ' Allows transparent background
         BackColor = Color.FromArgb(0, Color.Black) ' Sets a transparent background
-        CustomiseButtons(btns:=GetControls(Of Button)(frm:=Me)) ' Gets a list of buttons and designs each button
+        CustomiseButtons(GetControls(Of Button)(Me), Color.AntiqueWhite) ' Gets a list of buttons and designs each button
     End Sub
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
         ' Creates a hashtable of 4 players, each player is a "PlayerClass" instance
@@ -14,7 +14,7 @@
         }
 
         PlayMusic(Update:=True)
-        SwitchPanel(FrmGame) ' Switches to the "FrmGame" Form
+        PanelSwitchForm(FrmGame) ' Switches to the "FrmGame" Form
     End Sub
 
     ' These two subroutines below just add functionality for the players to change their names

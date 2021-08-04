@@ -12,10 +12,10 @@
     Function GetRounds(questions As ArrayList) As List(Of ArrayList)
         ' A function that returns a list of 4 partial arraylists
         Return New List(Of ArrayList) From {
-            GetPartialList(arr:=questions, startIndex:=0, lastIndex:=19),
-            GetPartialList(arr:=questions, startIndex:=20, lastIndex:=39),
-            GetPartialList(arr:=questions, startIndex:=40, lastIndex:=59),
-            GetPartialList(arr:=questions, startIndex:=60, lastIndex:=questions.Count - 1)}
+            GetPartialList(questions, 0, 19),
+            GetPartialList(questions, 20, 39),
+            GetPartialList(questions, 40, 59),
+            GetPartialList(questions, 60, questions.Count - 1)}
     End Function
 
     Function RandomiseOptions(question As Array) As Array
@@ -24,7 +24,7 @@
         For j = 1 To 4
             options.Add(question(j))
         Next
-        Call ShuffleArray(arr:=options)
+        Call ShuffleArray(options)
         options.Add(question(5))
         For j = 1 To 4
             question(j) = options(j - 1)
@@ -42,7 +42,7 @@
                 questions.Add(MyReader.ReadFields())
             End While
         End Using
-        Call ShuffleArray(arr:=questions)
+        Call ShuffleArray(questions)
         Return questions
     End Function
 

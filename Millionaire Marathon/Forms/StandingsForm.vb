@@ -2,7 +2,7 @@
     Private Sub FrmStandings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetStyle(ControlStyles.SupportsTransparentBackColor, True)
         BackColor = Color.FromArgb(0, Color.Black)
-        CustomiseButtons(btns:=GetControls(Of Button)(frm:=Me)) ' Gets a list of buttons and designs each button
+        CustomiseButtons(GetControls(Of Button)(Me), Color.AntiqueWhite) ' Gets a list of buttons and designs each button
 
         Dim sortedPlayers As Array = GetStandings()
         lblWinner.Text = $"{sortedPlayers(0).Value.Name} wins!"
@@ -12,9 +12,9 @@
         LblRankFourth.Text = $"{sortedPlayers(3).Value.Name}'s earnings: ${sortedPlayers(3).Value.Money}"
     End Sub
     Private Sub btnHome_Click(sender As Object, e As EventArgs) Handles btnHome.Click
-        ResetLastFrm(frm:=Me) ' Resets the previous form
-        PlayMusic(Update:=True)
-        SwitchPanel(frm:=FrmMenu) ' Displays FrmMenu in the panel
+        ResetLastFrm(Me) ' Resets the previous form
+        PlayMusic(True)
+        PanelSwitchForm(FrmMenu) ' Displays FrmMenu in the panel
     End Sub
 
     Private Function GetStandings() As Array

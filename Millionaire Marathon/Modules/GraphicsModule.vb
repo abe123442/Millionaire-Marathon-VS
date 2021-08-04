@@ -1,5 +1,5 @@
 ﻿Module GraphicsModule
-    Sub SwitchPanel(frm As Form)
+    Sub PanelSwitchForm(frm As Form)
         ' A subroutine that allows the functionality of displaying multiple forms on the same panel
         ' The previous contents of the form is cleared, then the panel adds the new "frm" form and displays it
         FrmMain.PanelMain.Controls.Clear()
@@ -9,13 +9,13 @@
         FrmMain.PanelMain.BringToFront()
     End Sub
 
-    Sub CustomiseButtons(btns As List(Of Button))
+    Sub CustomiseButtons(btns As List(Of Button), colour As Color)
         ' A subroutine that iterates over a list of buttons and changes the appearance of each button.
         For Each btn As Button In btns
             ' Button properties
             btn.FlatStyle = FlatStyle.Flat
             btn.FlatAppearance.BorderSize = 0
-            btn.BackColor = Color.AntiqueWhite
+            btn.BackColor = colour
             btn.Cursor = Cursors.Hand
             btn.Font = New Font("Century Gothic", 10)
             btn.TextAlign = ContentAlignment.MiddleCenter
@@ -48,6 +48,9 @@
                     btn.Text = info(3)
                 Case "btnOption4"
                     btn.Text = info(4)
+                Case "btnNext"
+                    btn.Enabled = False
+                    btn.Text = "Please answer to continue."
             End Select
         Next
     End Sub
