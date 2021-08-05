@@ -479,6 +479,17 @@
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_F000A2DD12AD4987B24461432D7F4F65"
+                    {
+                    "Name" = "8:Millionaire Marathon"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_4BC06F1FB5F143EA80BA28B1FEC69455"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
         }
@@ -618,6 +629,34 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_85F7629A4CD94351B5725A812ECC4309"
+            {
+            "Name" = "8:Millionaire Marathon"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_3529F64FBC0A4E13904319F7D092D6A4"
+            "Folder" = "8:_F000A2DD12AD4987B24461432D7F4F65"
+            "WorkingFolder" = "8:_30F5305C57194ED38870FFA5427B36C6"
+            "Icon" = "8:_AAE7DFC58F5340C8A22EF87D503F8A77"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A441D8D157EB44CBB0C663C66621B58F"
+            {
+            "Name" = "8:Millionaire Marathon"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_3529F64FBC0A4E13904319F7D092D6A4"
+            "Folder" = "8:_0E85323949684EA18FD772784DA2D863"
+            "WorkingFolder" = "8:_30F5305C57194ED38870FFA5427B36C6"
+            "Icon" = "8:_AAE7DFC58F5340C8A22EF87D503F8A77"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
@@ -1113,7 +1152,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_3529F64FBC0A4E13904319F7D092D6A4"
             {
-            "SourcePath" = "8:..\\Millionaire Marathon\\obj\\Release\\Millionaire Marathon.exe"
+            "SourcePath" = "8:..\\Millionaire Marathon\\obj\\Debug\\Millionaire Marathon.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_30F5305C57194ED38870FFA5427B36C6"

@@ -1,6 +1,6 @@
 ﻿Public Class FrmGame
-    Dim OptionEvent As New Threading.ManualResetEvent(False) ' An event that gets triggered
-    Private ReadOnly Rounds As List(Of ArrayList) = GetRounds(GetQuestions(QuestionsFilePath))
+    Dim OptionEvent As New Threading.ManualResetEvent(False) ' An event that gets triggered when a player answers a question
+    Private ReadOnly Rounds As List(Of ArrayList) = GetRounds(GetQuestions(QuestionsFilePath)) ' The rounds 
 
     Private Sub FrmGame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LastFrm = Me ' Sets the last active form to "Me" - allowing the game to be reset later on

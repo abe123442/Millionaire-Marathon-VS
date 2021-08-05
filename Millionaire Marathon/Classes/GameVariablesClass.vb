@@ -1,8 +1,8 @@
 ﻿Public Class GameVariablesClass
-    ' A class that is used to store game information that constantly updates
+    ' A class that is used to store game information that is constantly updated in "GameClass"
     Property CurrentRound As Integer
-    Property CurrentPlayerInfo As CurrentPlayerInfoClass
-    Property CurrentQuestionInfo As CurrentQuestionInfoClass
+    Property CurrentPlayerInfo As CurrentPlayerInfoClass ' Contains information about the current player
+    Property CurrentQuestionInfo As CurrentQuestionInfoClass ' Contains information about the current question
 
     Public Class CurrentPlayerInfoClass
         ' A subclass that contains all the "current" player information
