@@ -2,7 +2,7 @@
     Private Sub FrmStandings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetStyle(ControlStyles.SupportsTransparentBackColor, True)
         BackColor = Color.FromArgb(0, Color.Black)
-        CustomiseButtons(GetControls(Of Button)(Me), Color.AntiqueWhite) ' Gets a list of buttons and designs each button
+        CustomiseButtons(GetControls(Of Button)(Me), Color.GhostWhite) ' Gets a list of buttons and designs each button
 
         Dim sortedPlayers As Array = GetStandings()
         lblWinner.Text = $"{sortedPlayers(0).Value.Name} wins!"

@@ -42,7 +42,7 @@
                 questions.Add(MyReader.ReadFields())
             End While
         End Using
-        Call ShuffleArray(questions)
+        'Call ShuffleArray(questions)
         Return questions
     End Function
 

@@ -11,6 +11,6 @@
 
     Private Sub FrmMillion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim btnList As New List(Of Button) From {btnAccept, btnDecline}
-        CustomiseButtons(btnList, Color.AntiqueWhite)
+        CustomiseButtons(btnList, Color.GhostWhite)
     End Sub
 End Class

@@ -12,7 +12,8 @@
         ' Defines lists of different control types that get assigned via "GetControls" 
         Dim ButtonList As List(Of Button) = GetControls(Of Button)(Me)
         Dim LabelList As List(Of Label) = GetControls(Of Label)(Me)
-        Dim OptionList As New List(Of Button) From {btnOption1, btnOption2, btnOption3, btnOption4}
+        LabelList.Add(FrmMillion.lblChallenge)
+        Dim PassAndNextButtons As New List(Of Button) From {btnPass, btnNext}
 
         ' Initialises an instance of the class "GameClass" with several parameters 
         Dim Game As New GameClass(
@@ -24,8 +25,8 @@
             ButtonList,
             LabelList)
 
-        CustomiseButtons(ButtonList, Color.Azure) ' Takes a list of buttons and designs each button in that list
-        CustomiseButtons(OptionList, Color.AntiqueWhite) ' Takes a list of buttons and designs each button in that list
+        CustomiseButtons(ButtonList, Color.GhostWhite) ' Takes a list of buttons and designs each button in that list
+        CustomiseButtons(PassAndNextButtons, Color.FromArgb(223, 151, 151)) ' Takes a list of buttons and designs each button in that list
         Game.MainGame(FrmStandings) ' Calls the MainGame subroutine 
     End Sub
 
