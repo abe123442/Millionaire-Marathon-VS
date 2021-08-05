@@ -1,5 +1,5 @@
 ﻿Module GraphicsModule
-    Sub SwitchPanel(frm As Form)
+    Sub SwitchForm(frm As Form)
         ' A subroutine that allows the functionality of displaying multiple forms on the same panel
         ' The previous contents of the form is cleared, then the panel adds the new "frm" form and displays it
         FrmMain.PanelMain.Controls.Clear()

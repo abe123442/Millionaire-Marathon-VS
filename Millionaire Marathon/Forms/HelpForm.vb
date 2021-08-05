@@ -7,7 +7,7 @@
     End Sub
 
     Private Sub btnHome_Click(sender As Object, e As EventArgs) Handles btnHome.Click
-        SwitchPanel(frm:=FrmMenu) ' displaying the form "FrmMenu"
+        SwitchForm(frm:=FrmMenu) ' displaying the form "FrmMenu"
     End Sub
 
 

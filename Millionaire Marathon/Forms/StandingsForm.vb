@@ -14,7 +14,7 @@
     Private Sub btnHome_Click(sender As Object, e As EventArgs) Handles btnHome.Click
         ResetLastFrm(frm:=Me) ' Resets the previous form
         PlayMusic(Update:=True)
-        SwitchPanel(frm:=FrmMenu) ' Displays FrmMenu in the panel
+        SwitchForm(frm:=FrmMenu) ' Displays FrmMenu in the panel
     End Sub
 
     Private Function GetStandings() As Array

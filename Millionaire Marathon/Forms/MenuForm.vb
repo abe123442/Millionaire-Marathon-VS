@@ -10,9 +10,9 @@
         ResetLastFrm(frm:=Me) ' Resets the previous form
         Select Case sender.Name
             Case "btnPlay"
-                SwitchPanel(FrmSetup) ' Switches form to "FrmSetup"
+                SwitchForm(FrmSetup) ' Switches form to "FrmSetup"
             Case "btnHelp"
-                SwitchPanel(FrmHelp) ' Switches form to "FrmHelp"
+                SwitchForm(FrmHelp) ' Switches form to "FrmHelp"
             Case "btnExit"
                 LastFrm = FrmMain ' Exits the game
                 ResetLastFrm(frm:=Me)

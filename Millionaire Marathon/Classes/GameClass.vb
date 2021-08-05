@@ -53,7 +53,7 @@
 
                 ' Executes only if a player is 1 correct question away from $1M
                 If Players(PlayerID).Money = 2 ^ 19 Then
-                    SwitchPanel(frm:=FrmMillion) ' Switches to the challenge offer form
+                    SwitchForm(frm:=FrmMillion) ' Switches to the challenge offer form
                     lblChallenge.Text = $"{Players(PlayerID).Name}, do you want to risk losing all your earnings to have a chance at winning $1048576 ?"
 
                     ' Async functions can wait for certain tasks to be completed before running any more code
@@ -66,7 +66,7 @@
                     If AcceptMillion = False Then
                         Vars.CurrentPlayerInfo.ChangeCurrentPlayer()
                     End If
-                    SwitchPanel(frm:=FrmGame) ' Switches back to the game form
+                    SwitchForm(frm:=FrmGame) ' Switches back to the game form
                     MillionEvent.Reset() ' Resets the event so that it can get triggered again
                 End If
 
@@ -114,7 +114,7 @@
                     If AcceptMillion Then
                         Players(PlayerID).Money = 0
                         AcceptMillion = False
-                        SwitchPanel(nextForm)
+                        SwitchForm(nextForm)
                     End If
                 End If
 
@@ -123,6 +123,6 @@
             Next
         Next
         PlayMusic(Update:=True) ' Plays podium music
-        SwitchPanel(nextForm) ' Switches to the next form once the game is over
+        SwitchForm(nextForm) ' Switches to the next form once the game is over
     End Sub
 End Class

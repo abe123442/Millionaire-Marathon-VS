@@ -65,9 +65,9 @@ Partial Class FrmMillion
         Me.lblChallenge.BackColor = System.Drawing.Color.Transparent
         Me.lblChallenge.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblChallenge.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblChallenge.Location = New System.Drawing.Point(2, 136)
+        Me.lblChallenge.Location = New System.Drawing.Point(107, 114)
         Me.lblChallenge.Name = "lblChallenge"
-        Me.lblChallenge.Size = New System.Drawing.Size(770, 24)
+        Me.lblChallenge.Size = New System.Drawing.Size(560, 87)
         Me.lblChallenge.TabIndex = 3
         Me.lblChallenge.Text = "The final question..."
         Me.lblChallenge.TextAlign = System.Drawing.ContentAlignment.MiddleCenter

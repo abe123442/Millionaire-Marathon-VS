@@ -14,7 +14,7 @@
         }
 
         PlayMusic(Update:=True)
-        SwitchPanel(FrmGame) ' Switches to the "FrmGame" Form
+        SwitchForm(FrmGame) ' Switches to the "FrmGame" Form
     End Sub
 
     ' These two subroutines below just add functionality for the players to change their names
