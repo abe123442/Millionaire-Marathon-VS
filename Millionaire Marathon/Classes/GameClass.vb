@@ -2,9 +2,9 @@
     ' The main game class that is instantiated to run the game in "FrmGame"
     Property Buttons As List(Of Button)
     Property Labels As List(Of Label)
-    Property ButtonClick As Threading.ManualResetEvent
-    Property MillionEvent As Threading.ManualResetEvent
-    Property Players As Hashtable
+    Property PlayerResponse As Threading.ManualResetEvent  'Triggers when a player responds to a question
+    Property MillionEvent As Threading.ManualResetEvent ' Triggers when a player can attempt the million dollar challenge
+    Property Players As Hashtable ' Contains all the players of the game
     Property Rounds As List(Of ArrayList) ' Contains 4 rounds, each round containing 20/21 questions
 
     ' Class constructor - used for initialising a class instance
@@ -15,7 +15,7 @@
            rounds As List(Of ArrayList),
            buttons As List(Of Button),
            labels As List(Of Label))
-        Me.ButtonClick = buttonclick
+        Me.PlayerResponse = buttonclick
         Me.MillionEvent = millionevent
         Me.Players = players
         Me.Rounds = rounds
@@ -62,13 +62,15 @@
                         Sub()
                             MillionEvent.WaitOne()
                         End Sub)
+
                     ' Changing the player if they decline the challenge offer
                     If AcceptMillion = False Then
                         Vars.CurrentPlayerInfo.ChangeCurrentPlayer()
                     End If
-                    SwitchForm(frm:=FrmGame) ' Switches back to the game form
                     MillionEvent.Reset() ' Resets the event so that it can get triggered again
+                    SwitchForm(frm:=FrmGame) ' Switches back to the game form
                 End If
+                PlayerID = Vars.CurrentPlayerInfo.CurrentPlayerID
 
                 ' Updates the visual information of the game; e.g in "FrmGame"
                 PopulateButtons(btns:=Me.Buttons, info:=Vars.CurrentQuestionInfo.OptionsAnswersArray)
@@ -91,7 +93,7 @@
                 ' This time, the function waits for a player to select an option guess the answer
                 Await Task.Run(
                     Sub()
-                        ButtonClick.WaitOne()
+                        PlayerResponse.WaitOne()
                     End Sub)
 
                 ' This code block determines if a player was correct, incorrect or passed
@@ -119,7 +121,7 @@
                 End If
 
                 Vars.CurrentPlayerInfo.ChangeCurrentPlayer() ' Changes the player every question
-                ButtonClick.Reset() ' Resets the option event so that it can be triggered again for another player
+                PlayerResponse.Reset() ' Resets the option event so that it can be triggered again for another player
             Next
         Next
         PlayMusic(Update:=True) ' Plays podium music

@@ -12,10 +12,10 @@
     Function GetRounds(questions As ArrayList) As List(Of ArrayList)
         ' A function that returns a list of 4 partial arraylists
         Return New List(Of ArrayList) From {
-            GetPartialList(arr:=questions, startIndex:=0, lastIndex:=19),
-            GetPartialList(arr:=questions, startIndex:=20, lastIndex:=39),
-            GetPartialList(arr:=questions, startIndex:=40, lastIndex:=59),
-            GetPartialList(arr:=questions, startIndex:=60, lastIndex:=questions.Count - 1)}
+            GetPartialList(arr:=questions, startIndex:=0, lastIndex:=20),
+            GetPartialList(arr:=questions, startIndex:=21, lastIndex:=41),
+            GetPartialList(arr:=questions, startIndex:=42, lastIndex:=62),
+            GetPartialList(arr:=questions, startIndex:=62, lastIndex:=questions.Count - 1)}
     End Function
 
     Function RandomiseOptions(question As Array) As Array

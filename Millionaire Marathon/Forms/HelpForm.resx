@@ -118,9 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblTutorial.Text" xml:space="preserve">
-    <value>[1] After starting a game, each player is given 19 questions to answer and a chance to do the final million-dollar question if they get all 19 questions right!
+    <value>[1] In this game, each player needs to correctly answer 19 questions in order to risk their savings for a chance at the million dollar question.
 
-[2] If you get at least one question wrong, you will not have the chance to answer the million-dollar question.
+[2] If a player get at least one question wrong, you will not have the chance to answer the million-dollar question.
 
 [3] When you are in a question, there will be four different answers to choose. Simply left-click the mouse on the answer that you would like to choose.
 
