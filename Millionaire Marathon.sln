@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Millionaire Marathon", "Millionaire Marathon\Millionaire Marathon.vbproj", "{712DA89F-C4F4-4861-B28B-A4727229FA7E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MM Installer", "MM Installer\MM Installer.vdproj", "{B491DAE8-37E4-40D0-B7A3-3AE6E7F8F5E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{712DA89F-C4F4-4861-B28B-A4727229FA7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712DA89F-C4F4-4861-B28B-A4727229FA7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712DA89F-C4F4-4861-B28B-A4727229FA7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712DA89F-C4F4-4861-B28B-A4727229FA7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B491DAE8-37E4-40D0-B7A3-3AE6E7F8F5E5}.Debug|Any CPU.ActiveCfg = Debug
+		{B491DAE8-37E4-40D0-B7A3-3AE6E7F8F5E5}.Debug|Any CPU.Build.0 = Debug
+		{B491DAE8-37E4-40D0-B7A3-3AE6E7F8F5E5}.Release|Any CPU.ActiveCfg = Release
+		{B491DAE8-37E4-40D0-B7A3-3AE6E7F8F5E5}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92680428-1812-44A4-A6A5-7F3B98FE2EA3}
+	EndGlobalSection
+EndGlobal
